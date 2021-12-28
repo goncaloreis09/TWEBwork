@@ -1,0 +1,316 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap");
+/* 
+
+    CRIAÇÃO DE MIXIN PARA TORNAR O CÓDIGO MAIS LIMPO
+
+    FLEX: flex-(justify-content)-(align-items)
+
+*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  color: black;
+  font-family: 'Poppins', sans-serif;
+}
+
+nav#nav {
+  height: 6rem;
+  z-index: 999;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  width: 100%;
+  margin: 0;
+}
+
+nav#nav div#container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+}
+
+nav#nav div.logo {
+  margin-right: 20px;
+}
+
+nav#nav div.logo img {
+  margin: auto;
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+}
+
+nav#nav div.leftSide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav#nav div.leftSide ul.menu-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  font-size: 14px;
+}
+
+nav#nav div.leftSide ul.menu-items a {
+  color: black;
+  text-decoration: none;
+}
+
+nav#nav div.leftSide ul.menu-items .strong {
+  font-weight: bold;
+}
+
+nav#nav div.leftSide ul.menu-items li {
+  margin: 10px;
+}
+
+nav#nav div.leftSide ul.menu-items li:hover {
+  border-bottom: 1px solid black;
+  height: 100%;
+}
+
+nav#nav div.leftSide ul.menu-items li.dropdown {
+  position: relative;
+}
+
+nav#nav div.leftSide ul.menu-items li.dropdown div.dropdown-menu {
+  padding: 35px 30px;
+  display: none;
+  position: absolute;
+  top: 15px;
+  left: -35px;
+  cursor: default;
+}
+
+nav#nav div.leftSide ul.menu-items li.dropdown div.dropdown-menu ul#cover {
+  background: white;
+  padding: 5px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+nav#nav div.leftSide ul.menu-items li.dropdown div.dropdown-menu ul#cover li.no-underline {
+  list-style-type: none;
+  width: 276px;
+}
+
+nav#nav div.leftSide ul.menu-items li.dropdown div.dropdown-menu ul#cover li.no-underline:hover {
+  border-bottom: none;
+}
+
+nav#nav div.leftSide ul.menu-items li.dropdown div.dropdown-menu ul#cover li.no-underline ul {
+  display: block;
+}
+
+nav#nav div.leftSide ul.menu-items li.dropdown div.dropdown-menu ul#cover li.no-underline ul li {
+  list-style: none;
+  cursor: pointer;
+  font-size: 13px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+nav#nav div.leftSide ul.menu-items li.dropdown div.dropdown-menu ul#cover li.no-underline ul li:hover {
+  border-bottom: none;
+  text-decoration: underline;
+}
+
+nav#nav div.leftSide ul.menu-items li.dropdown div.dropdown-menu ul#cover li.no-underline span {
+  font-weight: 600;
+}
+
+nav#nav div.leftSide ul.menu-items li.dropdown:hover div.dropdown-menu {
+  display: block;
+}
+
+nav#nav div.leftSide ul.menu-items div.divider {
+  height: 1px;
+  width: 100%;
+  background-color: gray;
+}
+
+nav#nav div.rightSide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav#nav div.rightSide ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 12.5px;
+}
+
+nav#nav div.rightSide ul li {
+  list-style: none;
+  margin: 5px;
+  padding: 7px 10px 7px 10px;
+  background-color: rgba(247, 247, 247, 0.3);
+  border-radius: 20px;
+}
+
+nav#nav div.rightSide ul li:hover {
+  cursor: pointer;
+}
+
+div.banner {
+  height: 100vh;
+  width: 100%;
+  -webkit-transform: translateY(-6rem);
+          transform: translateY(-6rem);
+  z-index: 1;
+  position: relative;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+div.banner img {
+  width: 100%;
+  z-index: 0;
+}
+
+div.banner .mobile-banner {
+  display: none;
+}
+
+.background-white {
+  background: white;
+}
+
+.background-transparente {
+  background: transparent;
+}
+
+.hide-nav {
+  visibility: hidden;
+}
+
+.site-width {
+  width: 1124px;
+}
+
+nav#mobile {
+  height: 4rem;
+  z-index: 999;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  width: 100%;
+  margin: 0;
+  display: none;
+}
+
+nav#mobile .mobile-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+}
+
+nav#mobile .mobile-menu .mobile-menu-options ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav#mobile .mobile-menu .mobile-menu-options ul li {
+  list-style-type: none;
+  padding: 5px 12px;
+  margin: 5px;
+  background-color: rgba(247, 247, 247, 0.3);
+  border-radius: 45px;
+}
+
+nav#mobile .mobile-menu .mobile-menu-options ul li i.fa-align-left {
+  -webkit-transform: rotate(180deg) scaleX(-1);
+          transform: rotate(180deg) scaleX(-1);
+}
+
+@media only screen and (max-width: 1200px) {
+  .site-width {
+    width: 945px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  nav#nav {
+    display: none;
+  }
+  .site-width {
+    width: 705px;
+  }
+  div.banner {
+    -webkit-transform: translateY(-4rem);
+            transform: translateY(-4rem);
+  }
+  nav#mobile {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 745px) {
+  .site-width {
+    width: 500px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  div.banner .mobile-banner {
+    display: block;
+  }
+  .site-width {
+    width: 90%;
+  }
+  div.banner .desktop-banner {
+    display: none;
+  }
+  nav#nav {
+    display: none;
+  }
+}
+/*# sourceMappingURL=estilos.css.map */
