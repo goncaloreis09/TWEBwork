@@ -1,6 +1,14 @@
 const navDesktop = document.getElementById('nav')
 const navMobile = document.getElementById('mobile')
 const itemsMenuEspecial = document.querySelectorAll(".items-menu-especial")
+const body = document.getElementsByName("body")
+
+//constantes da navbar mobile
+const closeTrigger = document.querySelector(".closeBurger")
+const openTrigger = document.querySelector(".burger")
+const mobileMenu = document.querySelector(".hiding-menu")
+const drpdwnTriggers = document.querySelectorAll(".dropdown-indicator")
+
 
 //Variável que guarda a posição inicial do scroll para puder saber quando o utilizador está a dar scroll para cima ou para baixo
 var posicaoScroll = window.scrollY
@@ -32,3 +40,28 @@ window.addEventListener('scroll', ()=>{
 
     posicaoScroll = posicaoScrollNova
 })
+
+
+//Loop para abrir e fechar dropdowns no menu mobile
+for(let i=0; i<drpdwnTriggers.length;i++){
+    drpdwnTriggers[i].addEventListener("click", () => {
+        var nmr = drpdwnTriggers[i].id.split("-")
+        var drpdwn = document.getElementById(nmr[1])
+        drpdwn.classList.toggle("not-show")
+    })
+}
+
+
+document.addEventListener("click", (e) => {
+
+
+
+    //Abrir e Fechar menu mobile
+    if( e.target.matches(".burger") || e.target.matches(".fa-align-left")){
+        mobileMenu.classList.remove("hide")
+    }else if( e.target.matches(".closeBurger") || e.target.matches(".fa-times") || !e.target.matches(".no-close")){
+        mobileMenu.classList.add("hide")
+    }
+})
+
+

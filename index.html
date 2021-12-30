@@ -21,14 +21,25 @@
                 <ul class="menu-items">
                     <li class="strong"> <a href="#"> Comprar</a></li>
                     <li class="strong"> <a href="#">Arrendar</a></li>
-                    <li class="strong dropdown"><a href="#">Vender <i class="fas fa-angle-down"></i>
+                    <li class="dropdown"><a href="#">
+                        <span class="strong"> Vender</span> <i class="fas fa-angle-down"></i>
                         
                         <div class="dropdown-menu">
                             <ul id="cover">
                                 <li class="no-underline">
+                                    <span>Imóveis</span>
+                                    <div class="divider"></div>
                                     <ul>
-                                        <li>Franchising</li>
-                                        <li>Recrutamento</li>
+                                        <li>Quanto vale a minha casa?</li>
+                                        <li>Anúncio Gratuito</li>
+                                    </ul>
+                                </li>
+                                <li class="no-underline">
+                                    <span>Obra Nova</span>
+                                    <div class="divider"></div>
+                                    <ul>
+                                        <li>Apresentação</li>
+                                        <li>Candidatura</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -78,9 +89,21 @@
             </div>
             <div class="rightSide">
                 <ul class="menu-especial">
-                    <li class="items-menu-especial"><i class="far fa-comment" style="font-size: 12.5px;"></i></li>
-                    <li class="items-menu-especial">Iniciar Sessão</li>
-                    <li class="items-menu-especial">PT</li>
+                    <li class="items-menu-especial"><i class="far fa-comment msg-anim" style="font-size: 12.5px;"></i></li>
+                    <li class="items-menu-especial"><i class="far fa-user" style="margin-right: 6px;"></i>Iniciar Sessão</li>
+                    <li class="items-menu-especial dropdown">
+                        PT <i class="fas fa-angle-down"></i>
+                        <!-- <div class="dropdown-menu right">
+                            <ul id="cover">
+                                <li class="no-underline">
+                                    <ul>
+                                        <li>Franchising</li>
+                                        <li>Recrutamento</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div> -->
+                    </li>
                 </ul>
             </div>
         </div>
@@ -93,9 +116,93 @@
             </div>
             <div class="mobile-menu-options">
                 <ul>
-                    <li><i class="fas fa-align-left"></i></li>
+                    <li class="burger"><i class="fas fa-align-left"></i></li>
                     <li><i class="far fa-user"></i></li>
                 </ul>
+            </div>
+            <div class="hiding-menu hide no-close">
+                <button class="closeBurger"><i class="fas fa-times"></i></button>
+                <ul class="hiding-menu-options no-close">
+                    <li class="strong no-close">Comprar</li>
+                    <li class="strong no-close">Arrendar</li>
+                    <li class="no-close">
+                        <div class="dropdown-indicator no-close" id="drpdwn-1">
+                            <span class="strong"> Vender</span>  <i class="fas fa-angle-down no-close"></i>
+                        </div>
+                        <div class="dropdown-menu no-close not-show" id="1">
+                            <ul id="cover" class="no-close">
+                                <li class="no-underline no-close">
+                                    <span class="strong">Imóveis</span>
+                                    <div class="divider"></div>
+                                    <ul>
+                                        <li>Quanto vale a minha casa?</li>
+                                        <li>Anúncio Gratuito</li>
+                                    </ul>
+                                </li>
+                                <li class="no-underline no-close">
+                                    <span class="strong">Obra Nova</span>
+                                    <div class="divider"></div>
+                                    <ul>
+                                        <li>Apresentação</li>
+                                        <li>Candidatura</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="no-close">
+                        <div class="dropdown-indicator no-close" id="drpdwn-2">
+                            Vantagens  <i class="fas fa-angle-down no-close"></i>
+                        </div>
+                        <div class="dropdown-menu no-close not-show" id="2">
+                            <ul id="cover" class="no-close">
+                                <li class="no-underline no-close">
+                                    <span class="strong">Vantagens</span>
+                                    <div class="divider"></div>
+                                    <ul>
+                                        <li>Garantia ERA</li>
+                                        <li>Certificado Energétco</li>
+                                        <li>Até 100% Financiamento</li>
+                                        <li>Alta Rentabilidade</li>
+                                        <li>Casa a Estrear</li>
+                                    </ul>
+                                </li>
+                                <li class="no-underline no-close">
+                                    <span class="strong">Campanhas</span>
+                                    <div class="divider"></div>
+                                    <ul>
+                                        <li>Portugal Sweet Home</li>
+                                        <li>Casa Nova, Vida Nova</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="no-close">
+                        <div class="dropdown-indicator no-close" id="drpdwn-3">
+                            Carreiras  <i class="fas fa-angle-down no-close"></i>
+                        </div>
+                        <div class="dropdown-menu no-close not-show" id="3">
+                            <ul id="cover" class="no-close">
+                                <li class="no-underline no-close">
+                                    <ul>
+                                        <li>Franchising</li>
+                                        <li>Recrutamento</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                
+                <div class="languages">
+                    <ul>
+                        <li class="sublinhado">PT - Português</li>
+                        <li>EN - English</li>
+                        <li>ES - Español</li>
+                        <li>FR - Français</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
@@ -104,6 +211,30 @@
     <div class="banner">
         <img src="./img/banner.png" alt="" class="desktop-banner">
         <img src="./img/banner-mobile.png" class="mobile-banner" alt="">
+        <div class="search-wrapper">
+            <div class="procurar-casa site-width">
+                <div class="tipo-compra">
+                    <ul>
+                        <li class="strong active-compra">Comprar</li>
+                        <li class="strong">Arrendar</li>
+                        <li class="strong">Trespasse</li>
+                    </ul>
+                </div>
+                <div class="caixa-procura site-width">
+                    <div class="sup site-width">
+                        <div class="tipo-alojamento">
+
+                        </div>
+                        <div class="localidade">
+
+                        </div>
+                        <button>Procurar</button>
+                    <div class="inf">
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <p id="scroll"></p>
     <script src="./logica.js"></script>

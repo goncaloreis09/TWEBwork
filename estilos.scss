@@ -33,6 +33,10 @@ body{
 
 
 
+.strong{
+    font-weight: bold;
+}
+
 nav#nav{
     height: 6rem;
     z-index: 999;
@@ -69,10 +73,6 @@ nav#nav{
                 text-decoration: none;
             }
 
-            .strong{
-                font-weight: bold;
-            }
-
             li{
                 margin: 10px;
                 &:hover{
@@ -82,53 +82,7 @@ nav#nav{
             }
             
 
-            li.dropdown{
-                position: relative;
-                div.dropdown-menu{
-                    padding: 35px 30px;
-                    display: none;
-                    position: absolute;
-                    top: 15px;
-                    left: -35px;
-                    cursor:default;
-
-                    ul#cover{
-                        background: white;
-                        padding: 5px;
-                        border-radius: 5px;
-                        display: flex;
-                        box-shadow: 0 8px 12px 0 rgba(0,0,0,0.1);
-                        li.no-underline{
-                            list-style-type: none;
-                            width: 276px;
-                            &:hover{
-                                border-bottom: none;
-                            }
-                            ul{
-                                display: block;
-                                li{
-                                    list-style: none;
-                                    cursor: pointer;
-                                    font-size: 13px;
-                                    width: fit-content;
-                                    &:hover{
-                                        border-bottom: none;
-                                        text-decoration: underline;
-                                    }
-                                }
-                            }
-                            span{
-                                font-weight: 600;
-                            }
-                        }
-
-                    }
-                }
-
-                &:hover div.dropdown-menu{
-                        display: block;
-                }
-            }
+            
 
             div.divider{
                 height:1px;
@@ -160,6 +114,70 @@ nav#nav{
     }
 }
 
+li.dropdown{
+    position: relative;
+    div.dropdown-menu{
+        padding: 35px 30px;
+        display: none;
+        position: absolute;
+        top: 15px;
+        left: -35px;
+        cursor:default;
+
+        ul#cover{
+            background: white;
+            padding: 5px;
+            border-radius: 5px;
+            display: flex;
+            box-shadow: 0 8px 12px 0 rgba(0,0,0,0.1);
+            li.no-underline{
+                list-style-type: none;
+                width: 276px;
+                &:hover{
+                    border-bottom: none;
+                }
+                ul{
+                    display: block;
+                    li{
+                        list-style: none;
+                        cursor: pointer;
+                        font-size: 13px;
+                        width: fit-content;
+                        &:hover{
+                            border-bottom: none;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                span{
+                    font-weight: 600;
+                }
+            }
+
+        }
+    }
+
+    // div.right{
+        
+    //     position: absolute;
+    //     top: 15px;
+    //     right: 200px;
+    //     cursor:default;
+    //     width: 300px;
+    // }
+
+    &:hover{
+
+        div.dropdown-menu{
+            display: block;
+        }
+
+        i{
+            transform: rotateX(180deg);
+        }
+    }
+}
+
 div.banner{
     height: 100vh;
     width: 100%;
@@ -168,6 +186,67 @@ div.banner{
     position: relative;
     background-repeat: no-repeat;
     width: 100%;
+    div.search-wrapper{
+        width: 100%;
+        background-color: rgba(255, 255, 255,0.2);
+        position: relative;
+        top: -12rem;
+        height: 250px;
+        @include flex-center-center();
+        div.procurar-casa{
+            height: fit-content;
+            // background-color: rgba(255, 0, 0, 0.25);
+            margin: auto;
+            div.tipo-compra{
+                width: fit-content;
+                ul{
+                    display: flex;
+                    li{
+                        list-style-type: none;
+                        margin: 0px 5px;
+                        padding: 8px 15px;
+                        background-color: rgba(44,50,60,0.4);
+                        border-radius: 22px;
+                        border: 2px solid white;
+                        color: white;
+                        font-size: 15px;
+                        cursor: pointer;
+                    }
+
+                    li.active-compra{
+                        background-color: white;
+                        color: rgba(44,50,60,1)
+                    }
+                }
+            }
+            div.caixa-procura{
+                margin-top: 20px;
+                div.sup{
+                    height: 5rem;
+                    display: flex;
+                    div.tipo-alojamento{
+                        height: 100%;
+                        background-color: rgb(250, 250, 250);
+                        width: 30%;
+                    }
+                    div.localidade{
+                        width: 45%;
+                        height: 100%;
+                        background-color: rgb(250, 250, 250);
+                    }
+                    button{
+                        width: 25%;
+                        height:100%;
+                        background-color: #c8102e;
+                        font-weight: bold;
+                        color: white;
+                        border: none;
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 div.banner img{
@@ -194,6 +273,10 @@ div.banner .mobile-banner{
 
 .site-width{ //O que vai definir os limites do site todo
     width: 1124px;
+}
+
+.msg-anim{
+    animation: opacity 3s infinite;
 }
 
 nav#mobile{
@@ -227,9 +310,113 @@ nav#mobile{
             }
         }
     }
+
+    div.hiding-menu{
+        width: 75%;
+        height: 100vh;
+        background-color: white;
+        position: absolute;
+        top:0;
+        right: 0;
+        transition: all 0.4s ease;
+    }
 }
 
+div.hiding-menu{
+    ul.hiding-menu-options{
+        width: 90%;
+        margin: auto;
+        margin-top: 30%;
+        li{
+            list-style: none;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.18);
 
+            div.dropdown-indicator{
+                display: flex;
+                justify-content: space-between;
+                height: 100%;
+                align-items: center;
+                padding: 0 3px 0 0;
+            }
+
+            div.dropdown-menu{
+                ul#cover{
+                    margin-left: 10%;
+                    li.no-underline{
+                        span{
+                            font-size: 14.5px;
+                        }
+                        div.divider{
+                            height: 1px;
+                            width: 100%;
+                            border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+                        }
+                        ul li{
+                            margin-left: 10%;
+                            border-bottom: none;
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    div.languages{
+        margin-top: 10%;
+        ul{
+            width: 90%;
+            margin: auto;
+            li{
+                font-size: 13px;
+                margin: 7px 0;
+                list-style: none;
+            }
+
+            li.sublinhado{
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.hide{
+    transform: translateX(200%);
+}
+
+.not-show{
+    display:none;
+}
+
+.backdrop{
+    backdrop-filter: blur(20px) saturate(120%) contrast(200%);
+    overflow: hidden;
+}
+
+.closeBurger{
+    border: none;
+    padding: 10px;
+    background-color: transparent;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    i{
+        font-size: 19px;
+    }
+}
+
+@keyframes opacity{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 20%;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 
 @media only screen and (max-width: 1200px){
     .site-width{
@@ -237,6 +424,10 @@ nav#mobile{
     }
 }
 @media only screen and (max-width: 991px){
+    html{
+        overflow-x: hidden;
+    }
+
     nav#nav{
         display:none;
     }
@@ -258,6 +449,37 @@ nav#mobile{
 @media only screen and (max-width: 745px){
     .site-width{
         width: 500px;
+    }
+
+    div.banner{
+        div.search-wrapper{
+            div.procurar-casa{
+                margin:auto;
+                position: relative;
+                top: 3.5rem;
+                div.caixa-procura{
+                    div.sup{
+                        flex-direction: column;
+                        height: fit-content;
+                        background-color: white;
+                        width: 100%;
+                        div.localidade, div.tipo-alojamento{
+                            width: 100%;
+                            height: 3rem;
+                            padding: 10px 0;
+                        }
+                        div.localidade{
+                        }
+                        button{
+                            width: 95%;
+                            height: 3rem;
+                            border-radius: 5px;
+                            margin: 5px auto;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
