@@ -10,6 +10,10 @@ const mobileMenu = document.querySelector(".hiding-menu")
 const drpdwnTriggers = document.querySelectorAll(".dropdown-indicator")
 
 
+//barra de pesquisa
+const opcoes = document.querySelectorAll(".options")
+
+
 //Variável que guarda a posição inicial do scroll para puder saber quando o utilizador está a dar scroll para cima ou para baixo
 var posicaoScroll = window.scrollY
 
@@ -64,4 +68,16 @@ document.addEventListener("click", (e) => {
     }
 })
 
+
+//mudar texto dos filtros da barra de pesquisa
+for(let j=0; j<opcoes.length; j++){
+    for(let i=0; i<opcoes[j].children[0].children.length; i++){
+        opcoes[j].children[0].children[i].addEventListener("click", () =>{
+            var referencia = "." + opcoes[j].id //saber qual deles mudar o nome
+            var filtro = document.querySelector(referencia)
+            var txt = opcoes[j].children[0].children[i].innerHTML
+            filtro.innerHTML = txt
+        })
+    }
+}
 

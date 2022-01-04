@@ -18,6 +18,9 @@
                 <div class="logo">
                     <a href="#"><img src="./img/logo.svg" alt="Logotipo" width="50"></a>
                 </div>
+                
+            </div>
+            <div class="rightSide">
                 <ul class="menu-items">
                     <li class="strong"> <a href="#"> Comprar</a></li>
                     <li class="strong"> <a href="#">Arrendar</a></li>
@@ -40,6 +43,20 @@
                                     <ul>
                                         <li>Apresentação</li>
                                         <li>Candidatura</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </a></li>
+                    <li class="strong"> <a href="#">ERA Radar</a></li>
+                    <li class="dropdown"><a href="#">Carreiras <i class="fas fa-angle-down"></i>
+                        
+                        <div class="dropdown-menu">
+                            <ul id="cover">
+                                <li class="no-underline">
+                                    <ul>
+                                        <li>Franchising</li>
+                                        <li>Recrutamento</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -72,38 +89,12 @@
                             </ul>
                         </div>
                     </a></li>
-                    <li class="dropdown"><a href="#">Carreiras <i class="fas fa-angle-down"></i>
-                        
-                        <div class="dropdown-menu">
-                            <ul id="cover">
-                                <li class="no-underline">
-                                    <ul>
-                                        <li>Franchising</li>
-                                        <li>Recrutamento</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </a></li>            
+                    <li><a href="#">Contactos</a></li>      
                 </ul>
-            </div>
-            <div class="rightSide">
                 <ul class="menu-especial">
-                    <li class="items-menu-especial"><i class="far fa-comment msg-anim" style="font-size: 12.5px;"></i></li>
-                    <li class="items-menu-especial"><i class="far fa-user" style="margin-right: 6px;"></i>Iniciar Sessão</li>
-                    <li class="items-menu-especial dropdown">
-                        PT <i class="fas fa-angle-down"></i>
-                        <!-- <div class="dropdown-menu right">
-                            <ul id="cover">
-                                <li class="no-underline">
-                                    <ul>
-                                        <li>Franchising</li>
-                                        <li>Recrutamento</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div> -->
-                    </li>
+                    <li class="items-menu-especial"><i class="far fa-heart"></i> <span>0</span></li>
+                    <li class="items-menu-especial"><i class="far fa-clock"></i> <span>0</span></li>
+                    <li class="items-menu-especial"><i class="far fa-user" style="margin-right: 6px;"></i></li>
                 </ul>
             </div>
         </div>
@@ -116,8 +107,10 @@
             </div>
             <div class="mobile-menu-options">
                 <ul>
-                    <li class="burger"><i class="fas fa-align-left"></i></li>
+                    <li><i class="far fa-heart"></i></li>
+                    <li><i class="far fa-clock"></i></li>
                     <li><i class="far fa-user"></i></li>
+                    <li class="burger"><i class="fas fa-align-left"></i></li>
                 </ul>
             </div>
             <div class="hiding-menu hide no-close">
@@ -145,6 +138,22 @@
                                     <ul>
                                         <li>Apresentação</li>
                                         <li>Candidatura</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="strong no-close">ERA Radar</li>
+                    <li class="no-close">
+                        <div class="dropdown-indicator no-close" id="drpdwn-3">
+                            Carreiras  <i class="fas fa-angle-down no-close"></i>
+                        </div>
+                        <div class="dropdown-menu no-close not-show" id="3">
+                            <ul id="cover" class="no-close">
+                                <li class="no-underline no-close">
+                                    <ul>
+                                        <li>Franchising</li>
+                                        <li>Recrutamento</li>
                                     </ul>
                                 </li>
                             </ul>
@@ -178,60 +187,69 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="no-close">
-                        <div class="dropdown-indicator no-close" id="drpdwn-3">
-                            Carreiras  <i class="fas fa-angle-down no-close"></i>
-                        </div>
-                        <div class="dropdown-menu no-close not-show" id="3">
-                            <ul id="cover" class="no-close">
-                                <li class="no-underline no-close">
-                                    <ul>
-                                        <li>Franchising</li>
-                                        <li>Recrutamento</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+                    <li class="no-close">Contactos</li>
                 </ul>
-                
-                <div class="languages">
-                    <ul>
-                        <li class="sublinhado">PT - Português</li>
-                        <li>EN - English</li>
-                        <li>ES - Español</li>
-                        <li>FR - Français</li>
-                    </ul>
-                </div>
             </div>
         </div>
     </nav>
 
     <!-- Banner Inicial -->
     <div class="banner">
-        <img src="./img/banner.png" alt="" class="desktop-banner">
-        <img src="./img/banner-mobile.png" class="mobile-banner" alt="">
+        <!-- <img src="./img/banner.png" alt="" class="desktop-banner">
+        <img src="./img/banner-mobile.png" class="mobile-banner" alt=""> -->
         <div class="search-wrapper">
-            <div class="procurar-casa site-width">
-                <div class="tipo-compra">
-                    <ul>
-                        <li class="strong active-compra">Comprar</li>
-                        <li class="strong">Arrendar</li>
-                        <li class="strong">Trespasse</li>
-                    </ul>
-                </div>
-                <div class="caixa-procura site-width">
-                    <div class="sup site-width">
-                        <div class="tipo-alojamento">
-
+            <div class="caixa-procura site-width">
+                <div class="pesquisa">
+                    <div class="tipo-compra">
+                        <div class="title">
+                            <span class="compra">comprar</span>
+                            <i class="fas fa-arrow-up"></i>
                         </div>
-                        <div class="localidade">
-
+                        <div class="options" id="compra">
+                            <ul>
+                                <li>Comprar</li>
+                                <li>Arrendar</li>
+                                <li>Trespasse</li>
+                            </ul>
                         </div>
-                        <button>Procurar</button>
-                    <div class="inf">
-
                     </div>
+                    <div class="tipo-propriedade">
+                        <div class="title">
+                            <p class="propriedade">tipo imóvel</p>
+                            <i class="fas fa-arrow-up"></i>
+                        </div>
+                        <div class="options" id="propriedade">
+                            <ul>
+                                <li id="teste">Apartamento</li>
+                                <li>Moradias</li>
+                                <li>Terrenos</li>
+                                <li>Quintas e Herdades</li>
+                                <li>Garagens</li>
+                                <li>Prédios</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="quartos">
+                        <div class="title">
+                            <span class="n_quartos">quartos</span>
+                            <i class="fas fa-arrow-up"></i>
+                        </div>
+                        <div class="options" id="n_quartos">
+                            <ul>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4 ou mais</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="localidade">
+                        <input type="text" name="" id="" placeholder="Localidade (Concelho, Área)">
+                    </div>
+                    <button class="procurar-btn">Pesquisar</button>
+                </div>
+                <div class="opcoes">
+                    <button><i class="fas fa-search"></i>Opções</button>
                 </div>
             </div>
         </div>

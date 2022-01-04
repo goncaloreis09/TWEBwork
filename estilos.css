@@ -14,7 +14,7 @@
           box-sizing: border-box;
 }
 
-body {
+html {
   color: black;
   font-family: 'Poppins', sans-serif;
 }
@@ -59,46 +59,6 @@ nav#nav div.logo img {
           transform: translateY(5px);
 }
 
-nav#nav div.leftSide {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-nav#nav div.leftSide ul.menu-items {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  list-style: none;
-  font-size: 14px;
-}
-
-nav#nav div.leftSide ul.menu-items a {
-  color: black;
-  text-decoration: none;
-}
-
-nav#nav div.leftSide ul.menu-items li {
-  margin: 10px;
-}
-
-nav#nav div.leftSide ul.menu-items li:hover {
-  border-bottom: 1px solid black;
-  height: 100%;
-}
-
-nav#nav div.leftSide ul.menu-items div.divider {
-  height: 1px;
-  width: 100%;
-  background-color: gray;
-}
-
 nav#nav div.rightSide {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -115,13 +75,26 @@ nav#nav div.rightSide ul {
 nav#nav div.rightSide ul li {
   list-style: none;
   margin: 5px;
-  padding: 7px 10px 7px 10px;
-  background-color: rgba(247, 247, 247, 0.3);
-  border-radius: 20px;
+  padding: 7px 8px 7px 8px;
+  border-bottom: 1px solid transparent;
 }
 
 nav#nav div.rightSide ul li:hover {
   cursor: pointer;
+  border-bottom: 1px solid black;
+}
+
+nav#nav div.rightSide ul li a {
+  color: black;
+  text-decoration: none;
+}
+
+nav#nav div.rightSide ul.menu-especial {
+  margin-left: 15px;
+}
+
+nav#nav div.rightSide ul.menu-especial li {
+  padding: 7px 5px;
 }
 
 li.dropdown {
@@ -132,8 +105,8 @@ li.dropdown div.dropdown-menu {
   padding: 35px 30px;
   display: none;
   position: absolute;
-  top: 15px;
-  left: -35px;
+  top: 20px;
+  right: -35px;
   cursor: default;
 }
 
@@ -179,6 +152,12 @@ li.dropdown div.dropdown-menu ul#cover li.no-underline span {
   font-weight: 600;
 }
 
+li.dropdown div.dropdown-menu ul#cover li.no-underline div.divider {
+  height: 1px;
+  width: 100%;
+  background-color: black;
+}
+
 li.dropdown:hover div.dropdown-menu {
   display: block;
 }
@@ -189,7 +168,10 @@ li.dropdown:hover i {
 }
 
 div.banner {
-  height: 100vh;
+  background-image: url("./img/banner.png");
+  background-position: top center;
+  background-size: contain;
+  height: 80vh;
   width: 100%;
   -webkit-transform: translateY(-6rem);
           transform: translateY(-6rem);
@@ -201,10 +183,10 @@ div.banner {
 
 div.banner div.search-wrapper {
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(136, 136, 136, 0.432);
   position: relative;
-  top: -12rem;
-  height: 250px;
+  top: 31.5vw;
+  height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -216,73 +198,193 @@ div.banner div.search-wrapper {
           align-items: center;
 }
 
-div.banner div.search-wrapper div.procurar-casa {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+div.banner div.search-wrapper div.caixa-procura {
+  height: 60px;
   margin: auto;
-}
-
-div.banner div.search-wrapper div.procurar-casa div.tipo-compra {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-div.banner div.search-wrapper div.procurar-casa div.tipo-compra ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-div.banner div.search-wrapper div.procurar-casa div.tipo-compra ul li {
-  list-style-type: none;
-  margin: 0px 5px;
-  padding: 8px 15px;
-  background-color: rgba(44, 50, 60, 0.4);
-  border-radius: 22px;
-  border: 2px solid white;
-  color: white;
-  font-size: 15px;
+div.banner div.search-wrapper div.caixa-procura div.opcoes, div.banner div.search-wrapper div.caixa-procura div.pesquisa {
+  height: 100%;
+  border-radius: 3px;
+}
+
+div.banner div.search-wrapper div.caixa-procura div.opcoes {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+div.banner div.search-wrapper div.caixa-procura div.pesquisa {
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 10px;
+  font-family: 'Poppins';
+}
+
+div.banner div.search-wrapper div.caixa-procura div.pesquisa > :first-child {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+div.banner div.search-wrapper div.caixa-procura div.pesquisa div.quartos, div.banner div.search-wrapper div.caixa-procura div.pesquisa div.tipo-compra {
+  width: 16%;
+}
+
+div.banner div.search-wrapper div.caixa-procura div.pesquisa div.tipo-propriedade {
+  width: 20%;
+}
+
+div.banner div.search-wrapper div.caixa-procura div.pesquisa div[class^="tipo-"], div.banner div.search-wrapper div.caixa-procura div.pesquisa div.quartos {
+  position: relative;
+  height: 100%;
+  border-right: 1px solid #727171;
+  background-color: white;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 13.5px;
   cursor: pointer;
 }
 
-div.banner div.search-wrapper div.procurar-casa div.tipo-compra ul li.active-compra {
+div.banner div.search-wrapper div.caixa-procura div.pesquisa div[class^="tipo-"] > div.options, div.banner div.search-wrapper div.caixa-procura div.pesquisa div.quartos > div.options {
+  display: none;
   background-color: white;
-  color: #2c323c;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 101%;
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-div.banner div.search-wrapper div.procurar-casa div.caixa-procura {
-  margin-top: 20px;
+div.banner div.search-wrapper div.caixa-procura div.pesquisa div[class^="tipo-"] > div.options ul li, div.banner div.search-wrapper div.caixa-procura div.pesquisa div.quartos > div.options ul li {
+  list-style: none;
+  padding: 7px 10px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-div.banner div.search-wrapper div.procurar-casa div.caixa-procura div.sup {
-  height: 5rem;
+div.banner div.search-wrapper div.caixa-procura div.pesquisa div[class^="tipo-"] > div.options ul li:hover, div.banner div.search-wrapper div.caixa-procura div.pesquisa div.quartos > div.options ul li:hover {
+  color: #c8102e;
+  background-color: #ececec;
+}
+
+div.banner div.search-wrapper div.caixa-procura div.pesquisa div[class^="tipo-"] div.title, div.banner div.search-wrapper div.caixa-procura div.pesquisa div.quartos div.title {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-div.banner div.search-wrapper div.procurar-casa div.caixa-procura div.sup div.tipo-alojamento {
-  height: 100%;
-  background-color: #fafafa;
-  width: 30%;
-}
-
-div.banner div.search-wrapper div.procurar-casa div.caixa-procura div.sup div.localidade {
-  width: 45%;
-  height: 100%;
-  background-color: #fafafa;
-}
-
-div.banner div.search-wrapper div.procurar-casa div.caixa-procura div.sup button {
-  width: 25%;
-  height: 100%;
-  background-color: #c8102e;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-weight: bold;
-  color: white;
+  text-transform: uppercase;
+}
+
+div.banner div.search-wrapper div.caixa-procura div.pesquisa div[class^="tipo-"] div.title:hover + div.options, div.banner div.search-wrapper div.caixa-procura div.pesquisa div.quartos div.title:hover + div.options {
+  display: block;
+}
+
+div.banner div.search-wrapper div.caixa-procura div.pesquisa div[class^="tipo-"]:hover > div > span, div.banner div.search-wrapper div.caixa-procura div.pesquisa div.quartos:hover > div > span {
+  color: #c8102e;
+}
+
+div.banner div.search-wrapper div.caixa-procura div.pesquisa div[class^="tipo-"]:hover > div > i, div.banner div.search-wrapper div.caixa-procura div.pesquisa div.quartos:hover > div > i {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+
+div.banner div.search-wrapper div.caixa-procura div.pesquisa div[class^="tipo-"]:hover div.options, div.banner div.search-wrapper div.caixa-procura div.pesquisa div.quartos:hover div.options {
+  display: block;
+}
+
+div.banner div.search-wrapper div.caixa-procura div.pesquisa div.localidade {
+  height: 100%;
+  width: 32%;
+  background-color: white;
+  padding: 10px 20px;
+}
+
+div.banner div.search-wrapper div.caixa-procura div.pesquisa div.localidade > input {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
   border: none;
+  outline: none;
+  font-weight: bold;
+  font-family: 'Poppins';
+}
+
+div.banner div.search-wrapper div.caixa-procura div.pesquisa div.localidade > input::-webkit-input-placeholder {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Poppins';
+}
+
+div.banner div.search-wrapper div.caixa-procura div.pesquisa div.localidade > input:-ms-input-placeholder {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Poppins';
+}
+
+div.banner div.search-wrapper div.caixa-procura div.pesquisa div.localidade > input::-ms-input-placeholder {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Poppins';
+}
+
+div.banner div.search-wrapper div.caixa-procura div.pesquisa div.localidade > input::placeholder {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Poppins';
+}
+
+div.banner div.search-wrapper div.caixa-procura div.pesquisa > button.procurar-btn {
+  width: 16%;
+  border: none;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #c8102e;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+}
+
+div.banner div.search-wrapper div.caixa-procura div.pesquisa > button.procurar-btn:hover {
+  background-color: #b4142e;
+}
+
+div.banner div.search-wrapper div.caixa-procura div.opcoes > button {
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  background-color: gray;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+div.banner div.search-wrapper div.caixa-procura div.opcoes > button > i {
   font-size: 17px;
+}
+
+div.banner div.search-wrapper div.caixa-procura div.opcoes > button:hover {
+  background-color: dimgray;
 }
 
 div.banner img {
@@ -308,11 +410,6 @@ div.banner .mobile-banner {
 
 .site-width {
   width: 1124px;
-}
-
-.msg-anim {
-  -webkit-animation: opacity 3s infinite;
-          animation: opacity 3s infinite;
 }
 
 nav#mobile {
@@ -471,30 +568,6 @@ div.hiding-menu div.languages ul li.sublinhado {
   font-size: 19px;
 }
 
-@-webkit-keyframes opacity {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 20%;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes opacity {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 20%;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 @media only screen and (max-width: 1200px) {
   .site-width {
     width: 945px;
@@ -518,44 +591,66 @@ div.hiding-menu div.languages ul li.sublinhado {
   nav#mobile {
     display: block;
   }
+  div.banner div.search-wrapper div.caixa-procura div.pesquisa div[class^="tipo-"], div.banner div.search-wrapper div.caixa-procura div.pesquisa div.quartos {
+    padding: 10px;
+  }
+  div.banner div.search-wrapper div.opcoes {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 745px) {
   .site-width {
-    width: 500px;
+    width: 550px;
   }
-  div.banner div.search-wrapper div.procurar-casa {
-    margin: auto;
-    position: relative;
-    top: 3.5rem;
-  }
-  div.banner div.search-wrapper div.procurar-casa div.caixa-procura div.sup {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    background-color: white;
-    width: 100%;
-  }
-  div.banner div.search-wrapper div.procurar-casa div.caixa-procura div.sup div.localidade, div.banner div.search-wrapper div.procurar-casa div.caixa-procura div.sup div.tipo-alojamento {
-    width: 100%;
-    height: 3rem;
-    padding: 10px 0;
-  }
-  div.banner div.search-wrapper div.procurar-casa div.caixa-procura div.sup button {
-    width: 95%;
-    height: 3rem;
-    border-radius: 5px;
-    margin: 5px auto;
+  div.banner div.search-wrapper div.caixa-procura div.pesquisa div[class^="tipo-"], div.banner div.search-wrapper div.caixa-procura div.pesquisa div.quartos {
+    padding: 5px;
+    font-size: 12px;
   }
 }
 
 @media only screen and (max-width: 575px) {
-  div.banner .mobile-banner {
-    display: block;
+  div.banner {
+    background-image: url("./img/bannerMobile2.png");
+    background-size: 100%;
+    background-position: center;
+    height: 80vh;
+    width: 100%;
+  }
+  div.banner div.search-wrapper {
+    position: absolute;
+    top: 53vh;
+    height: 27vh;
+  }
+  div.banner div.search-wrapper div.caixa-procura {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-top: 1.5vh;
+  }
+  div.banner div.search-wrapper div.caixa-procura div.pesquisa {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  div.banner div.search-wrapper div.caixa-procura div.pesquisa div.quartos, div.banner div.search-wrapper div.caixa-procura div.pesquisa div.tipo-compra {
+    width: calc(100vw*0.275);
+    border: none;
+  }
+  div.banner div.search-wrapper div.caixa-procura div.pesquisa div.tipo-propriedade {
+    width: calc(100vw*0.35);
+    border-left: 1px solid gray;
+  }
+  div.banner div.search-wrapper div.caixa-procura div.pesquisa div.localidade, div.banner div.search-wrapper div.caixa-procura div.pesquisa button.procurar-btn {
+    width: calc(100vw*0.9);
+  }
+  div.banner div.search-wrapper div.caixa-procura div.pesquisa button.procurar-btn {
+    padding: 10px 0;
+  }
+  div.banner div.search-wrapper div.caixa-procura div.pesquisa div[class^="tipo-"], div.banner div.search-wrapper div.caixa-procura div.pesquisa div.quartos {
+    padding: 10px;
+    font-size: 13px;
   }
   .site-width {
     width: 90%;
