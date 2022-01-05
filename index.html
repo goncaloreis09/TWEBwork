@@ -93,7 +93,35 @@
                 </ul>
                 <ul class="menu-especial">
                     <li class="items-menu-especial"><i class="far fa-heart"></i> <span>0</span></li>
-                    <li class="items-menu-especial"><i class="far fa-clock"></i> <span>0</span></li>
+                    <li class="items-menu-especial">
+                        <i class="far fa-clock"></i>
+                        <span id="hist-counter">0</span>
+<!--                  
+                        HISTÓRICO DE PESQUISA
+
+
+                        <div class="historico-pesquisas">
+                            <h4>Histórico de pesquisas</h4>
+                            <div class="pesquisa">
+                                <div>
+                                    <div>
+                                        Tipo<i class="fas fa-euro-sign">:</i><span>Compra</span>
+                                    </div>
+                                    <div>
+                                        Imóvel<i class="fas fa-monument">:</i><span>Terrenos</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        Quartos<i class="fas fa-home">:</i><span>Indefenido</span>
+                                    </div>
+                                    <div>
+                                        Localidade<i class="fas fa-map-marker-alt">:</i><span>Fátima</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </li>
                     <li class="items-menu-especial"><i class="far fa-user" style="margin-right: 6px;"></i></li>
                 </ul>
             </div>
@@ -202,7 +230,7 @@
                 <div class="pesquisa">
                     <div class="tipo-compra">
                         <div class="title">
-                            <span class="compra">comprar</span>
+                            <span class="compra dado-pesquisa">comprar</span>
                             <i class="fas fa-arrow-up"></i>
                         </div>
                         <div class="options" id="compra">
@@ -215,7 +243,7 @@
                     </div>
                     <div class="tipo-propriedade">
                         <div class="title">
-                            <p class="propriedade">tipo imóvel</p>
+                            <p class="propriedade dado-pesquisa">tipo imóvel</p>
                             <i class="fas fa-arrow-up"></i>
                         </div>
                         <div class="options" id="propriedade">
@@ -231,7 +259,7 @@
                     </div>
                     <div class="quartos">
                         <div class="title">
-                            <span class="n_quartos">quartos</span>
+                            <span class="n_quartos dado-pesquisa">quartos</span>
                             <i class="fas fa-arrow-up"></i>
                         </div>
                         <div class="options" id="n_quartos">
@@ -244,7 +272,7 @@
                         </div>
                     </div>
                     <div class="localidade">
-                        <input type="text" name="" id="" placeholder="Localidade (Concelho, Área)">
+                        <input id="dado-localidade" type="text" name="" id="" placeholder="Localidade (Concelho, Área)">
                     </div>
                     <button class="procurar-btn">Pesquisar</button>
                 </div>
@@ -254,7 +282,30 @@
             </div>
         </div>
     </div>
-    <p id="scroll"></p>
+
+    <!-- Fotos das casas -->
+
+    <div class="galeria site-width">
+        <h1>Destaques</h1>
+        <ul class="seletor">
+            <li class="active-tab">Todas</li>
+            <li>Garantia ERA</li>
+            <li>Exclusivas</li>
+            <li>Desenvolvimentos</li>
+            <li>Visita Virtual</li>
+        </ul>
+        <div class="fotos">
+            <div class="grid-span-2"><img src="./img/casa4.jpg" alt=""></div>
+            <div> <img src="./img/casa1.jpg" alt=""></div>
+            <div><img src="./img/casa2.jpg" alt=""></div>
+            <div><img src="./img/casa3.jpg" alt=""></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
     <script src="./logica.js"></script>
 </body>
 </html>

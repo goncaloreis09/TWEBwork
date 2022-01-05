@@ -12,6 +12,16 @@ const drpdwnTriggers = document.querySelectorAll(".dropdown-indicator")
 
 //barra de pesquisa
 const opcoes = document.querySelectorAll(".options")
+const dadosPesquisa = document.querySelectorAll(".dado-pesquisa")
+const localidade = document.querySelector("#dado-localidade")
+const btnPesquisar = document.querySelector(".procurar-btn")
+
+//Seletor da galeria
+const seletores = document.querySelector(".seletor").children
+
+//contador de histórico
+const contadorHist = document.querySelector("#hist-counter")
+const painelHist = document.querySelector(".historico-pesquisas")
 
 
 //Variável que guarda a posição inicial do scroll para puder saber quando o utilizador está a dar scroll para cima ou para baixo
@@ -80,4 +90,104 @@ for(let j=0; j<opcoes.length; j++){
         })
     }
 }
+
+
+for(let i=0; i<seletores.length; i++){
+    seletores[i].addEventListener("click", () =>{
+        seletores[i].classList.add("active-tab")
+        for(let j=0; j<seletores.length; j++){
+            if(j!=i){
+                seletores[j].classList.remove("active-tab")
+            }
+        }
+    })
+}
+
+
+// const dadosPesquisa = document.querySelectorAll(".dado-pesquisa")
+// const localidade = document.querySelector("#dado-localidade")
+// const btnPesquisar = document.querySelector(".procurar-btn")
+
+// //Guardar informação de pesquisas anteriores
+// localStorage.setItem("numPesquisas", 1) //Guardar quantas pesquisas o utilizador já fez, para ajudar na nomeação
+//                                         //do objeto
+
+// btnPesquisar.addEventListener("click", (e)=>{
+//     let tipoCompra = dadosPesquisa[0].innerHTML
+//     let tipoImovel
+//     let nQuartos
+//     if(dadosPesquisa[1].innerHTML != "tipo imóvel"){
+//         tipoImovel = dadosPesquisa[1].innerHTML
+//     } // verificar se tem algum valor válido
+//     else{
+//         tipoImovel = "Indefenido"
+//     }
+
+//     if(dadosPesquisa[2].innerHTML != "quartos"){ // verificar se tem algum valor válido
+//         nQuartos = dadosPesquisa[2].innerHTML
+//     }else{
+//         nQuartos = "Indefenido"
+//     }
+
+//     let localidadeValue = localidade.value
+
+//     let pesquisa = {
+//             tipoCompra: tipoCompra,
+//             tipoImovel: tipoImovel,
+//             quartos: nQuartos,
+//             localidade: localidadeValue
+//     }
+
+//     let pesquisaSerialized = JSON.stringify(pesquisa)
+
+//     let numPesquisa = localStorage.getItem("numPesquisas")
+//     console.log(localStorage.getItem("numPesquisas"))
+//     let nome = "pesquisa" + numPesquisa
+
+
+//     localStorage.setItem(nome, pesquisaSerialized)
+
+//     if(localStorage.getItem(nome)){ //verificar se ficou mesmo guardado
+//         contadorHist.innerHTML = numPesquisa
+//     }
+
+
+//     for(let i=1; i<=parseInt(numPesquisa); i++){
+//         let nome = "pesquisa" + numPesquisa
+//         let obj = localStorage.getItem(nome)
+//         if(obj){
+//             let newDiv = document.createElement("div")
+//             newDiv.innerHTML = `<div>
+//                     <div>
+//                         Tipo<i class="fas fa-euro-sign">:</i><span>${pesquisa.tipoCompra}</span>
+//                     </div>
+//                     <div>
+//                         Imóvel<i class="fas fa-monument">:</i><span>${pesquisa.tipoImovel}</span>
+//                     </div>
+//                 </div>
+//                 <div>
+//                     <div>
+//                         Quartos<i class="fas fa-home">:</i><span>${pesquisa.quartos}</span>
+//                     </div>
+//                     <div>
+//                         Localidade<i class="fas fa-map-marker-alt">:</i><span>${pesquisa.localidade}</span>
+//                     </div>
+//                 </div>`
+
+//             newDiv.classList.add("pesquisa")
+//             painelHist.append(newDiv)
+    
+//         }
+    
+//     }
+
+//     numPesquisa++
+//     localStorage.setItem("numPesquisas", numPesquisa)
+//     console.log(localStorage.getItem("numPesquisas"))
+// })
+
+
+
+// let num = localStorage.getItem("numPesquisas")
+// num--
 
