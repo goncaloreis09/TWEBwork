@@ -661,6 +661,231 @@ div.avaliar-imovel-wrapper div.avaliar-imovel > button#avaliar-btn:hover {
   background-color: #b4142e;
 }
 
+footer {
+  width: 100%;
+  background-color: #242424;
+}
+
+footer div.footer-info-wrapper {
+  border-bottom: 1px solid gray;
+  width: 100%;
+}
+
+footer div.footer-info-wrapper div.footer-info {
+  padding: 3rem 0;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+footer div.footer-info-wrapper div.footer-info div.sub-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer div.footer-info-wrapper div.footer-info div.sub-menu ul {
+  margin: 5px 10px;
+  width: 140px;
+}
+
+footer div.footer-info-wrapper div.footer-info div.sub-menu ul li {
+  list-style: none;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+footer div.footer-info-wrapper div.footer-info div.sub-menu ul li:hover:not(.sub-menu-title) {
+  color: #c8102e;
+}
+
+footer div.footer-info-wrapper div.footer-info div.sub-menu ul li.sub-menu-title {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: white;
+  cursor: default;
+}
+
+footer div.footer-info-wrapper div.footer-info div.redes-sociais {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 125px;
+}
+
+footer div.footer-info-wrapper div.footer-info div.redes-sociais > p {
+  color: white;
+  text-align: left;
+}
+
+footer div.footer-info-wrapper div.footer-info div.redes-sociais > div {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+footer div.footer-info-wrapper div.footer-info div.redes-sociais > div > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 35px;
+  height: 35px;
+  background-color: rgba(56, 56, 56, 0.6);
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+}
+
+footer div.footer-info-wrapper div.footer-info div.redes-sociais > div > a:hover {
+  background: rgba(56, 56, 56, 0.8);
+}
+
+footer div.copyright {
+  margin: auto;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+footer div.copyright div.left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer div.copyright div.left > div {
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+footer div.copyright div.left > div ul.direitos {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer div.copyright div.left > div ul.direitos li {
+  margin: 2px;
+}
+
+footer div.copyright div.left > div ul.direitos li.hoverable {
+  cursor: pointer;
+}
+
+footer div.copyright div.left > div ul.direitos li.hoverable:hover {
+  color: #c8102e;
+}
+
+footer div.copyright div.right div.language {
+  position: relative;
+  padding: 10px 15px;
+  background-color: rgba(56, 56, 56, 0.6);
+  cursor: pointer;
+  color: white;
+}
+
+footer div.copyright div.right div.language > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer div.copyright div.right div.language > div span {
+  font-size: 13px;
+  margin: 0 10px;
+}
+
+footer div.copyright div.right div.language:hover {
+  background: rgba(56, 56, 56, 0.8);
+}
+
+footer div.copyright div.right div.language:hover > div > i.fa-angle-down {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+
+footer div.copyright div.right div.language:hover div.language-options {
+  display: block;
+}
+
+footer div.copyright div.right div.language div.language-options {
+  position: absolute;
+  top: -270%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  display: none;
+}
+
+footer div.copyright div.right div.language div.language-options > ul {
+  padding: 3px;
+  cursor: default;
+  width: 100%;
+}
+
+footer div.copyright div.right div.language div.language-options > ul li {
+  list-style: none;
+  padding: 3px 5px;
+  color: rgba(56, 56, 56, 0.8);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+footer div.copyright div.right div.language div.language-options > ul li:hover {
+  color: #c8102e;
+  background-color: #dfdfdf;
+}
+
 .active-tab {
   color: #c8102e;
   border-bottom: 3px solid #c8102e;
@@ -800,25 +1025,6 @@ div.hiding-menu ul.hiding-menu-options li div.dropdown-menu ul#cover li.no-under
   font-size: 13px;
 }
 
-div.hiding-menu div.languages {
-  margin-top: 10%;
-}
-
-div.hiding-menu div.languages ul {
-  width: 90%;
-  margin: auto;
-}
-
-div.hiding-menu div.languages ul li {
-  font-size: 13px;
-  margin: 7px 0;
-  list-style: none;
-}
-
-div.hiding-menu div.languages ul li.sublinhado {
-  text-decoration: underline;
-}
-
 .hide {
   -webkit-transform: translateX(200%);
           transform: translateX(200%);
@@ -903,6 +1109,25 @@ div.hiding-menu div.languages ul li.sublinhado {
     padding: 8px 15px;
     font-size: 11px;
   }
+  footer div.copyright {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer div.copyright div.left > div {
+    font-size: 10px;
+  }
+  footer div.copyright div.left > div > ul {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  footer div.copyright div.right {
+    margin-top: 25px;
+  }
 }
 
 @media only screen and (max-width: 745px) {
@@ -948,6 +1173,21 @@ div.hiding-menu div.languages ul li.sublinhado {
   div.avaliar-imovel-wrapper div.avaliar-imovel button#avaliar-btn {
     padding: 8px 10px;
     font-size: 10px;
+  }
+  footer div.footer-info-wrapper div.footer-info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer div.footer-info-wrapper div.footer-info div.sub-menu {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -1035,18 +1275,31 @@ div.hiding-menu div.languages ul li.sublinhado {
   .site-width {
     width: 90%;
   }
-  div.banner .desktop-banner {
-    display: none;
-  }
-  nav#nav {
-    display: none;
-  }
   div.avaliar-imovel-wrapper div.avaliar-imovel p:nth-child(1) {
     font-size: 13px;
     margin-right: 40px;
   }
   div.avaliar-imovel-wrapper div.avaliar-imovel p:nth-child(2) {
     display: none;
+  }
+  footer div.footer-info-wrapper div.footer-info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  footer div.footer-info-wrapper div.footer-info div.sub-menu {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  footer div.footer-info-wrapper div.footer-info div.redes-sociais {
+    margin-top: 30px;
+    width: 100px;
   }
 }
 /*# sourceMappingURL=estilos.css.map */
