@@ -496,8 +496,11 @@ div.galeria div.fotos {
   grid-gap: 5px;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-  -ms-grid-rows: (1fr)[4];
-      grid-template-rows: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+}
+
+div.galeria div.fotos > div {
+  cursor: pointer;
 }
 
 div.galeria div.fotos > div > img {
@@ -507,6 +510,155 @@ div.galeria div.fotos > div > img {
 
 .grid-span-2 {
   grid-column: span 2;
+}
+
+div.vantagens-era {
+  margin: 7rem auto 5rem auto;
+}
+
+div.vantagens-era > p {
+  text-align: center;
+  font-size: 24pt;
+  font-weight: bold;
+}
+
+div.vantagens-era > div.vantagens {
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 20px;
+}
+
+div.vantagens-era > div.vantagens div.card {
+  width: 22%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+div.vantagens-era > div.vantagens div.card img {
+  margin: auto;
+}
+
+div.vantagens-era > div.vantagens div.card p.card-title {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+div.vantagens-era > div.vantagens div.card p.card-description {
+  font-size: 14px;
+  color: #414141;
+  margin: 30px 0 10px 0;
+  height: 120px;
+}
+
+div.vantagens-era > div.vantagens div.card > a {
+  text-decoration: none;
+  color: #4b4a4a;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14.5px;
+}
+
+div.pesquisas-comuns {
+  margin: 6rem auto 0 auto;
+  padding: 3rem 0;
+  background: rgba(167, 167, 167, 0.125);
+}
+
+div.pesquisas-comuns > div {
+  margin: auto;
+}
+
+div.pesquisas-comuns > div > h3 {
+  color: #333333;
+}
+
+div.pesquisas-comuns > div div.topicos {
+  margin-top: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+div.pesquisas-comuns > div div.topicos div.topico > p {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+div.pesquisas-comuns > div div.topicos div.topico ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+div.pesquisas-comuns > div div.topicos div.topico ul li {
+  list-style: none;
+  font-size: 12px;
+  margin: 0 5px 0 0;
+  cursor: pointer;
+}
+
+div.pesquisas-comuns > div div.topicos div.topico ul li:hover {
+  color: #c8102e;
+}
+
+div.avaliar-imovel-wrapper {
+  width: 100%;
+  padding: 10px 0;
+  background: #2e2e2e;
+}
+
+div.avaliar-imovel-wrapper div.avaliar-imovel {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.avaliar-imovel-wrapper div.avaliar-imovel p {
+  color: white;
+  font-size: 14px;
+}
+
+div.avaliar-imovel-wrapper div.avaliar-imovel p:nth-child(2) {
+  margin: 0 20px;
+}
+
+div.avaliar-imovel-wrapper div.avaliar-imovel > button#avaliar-btn {
+  padding: 10px 25px;
+  color: white;
+  border: none;
+  background-color: #c8102e;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+div.avaliar-imovel-wrapper div.avaliar-imovel > button#avaliar-btn:hover {
+  background-color: #b4142e;
 }
 
 .active-tab {
@@ -699,6 +851,13 @@ div.hiding-menu div.languages ul li.sublinhado {
   .site-width {
     width: 945px;
   }
+  div.vantagens-era div.vantagens div.card p.card-title {
+    font-size: 14px;
+  }
+  div.vantagens-era div.vantagens div.card p.card-description {
+    height: 150px;
+    font-size: 13.5px;
+  }
 }
 
 @media only screen and (max-width: 991px) {
@@ -724,6 +883,26 @@ div.hiding-menu div.languages ul li.sublinhado {
   div.banner div.search-wrapper div.opcoes {
     display: none;
   }
+  div.vantagens-era div.vantagens div.card {
+    width: 45%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  div.vantagens-era div.vantagens div.card p.card-description {
+    height: 100px;
+  }
+  div.vantagens-era div.vantagens div.card > img {
+    margin: auto;
+  }
+  div.avaliar-imovel-wrapper div.avaliar-imovel button#avaliar-btn {
+    padding: 8px 15px;
+    font-size: 11px;
+  }
 }
 
 @media only screen and (max-width: 745px) {
@@ -733,6 +912,42 @@ div.hiding-menu div.languages ul li.sublinhado {
   div.banner div.search-wrapper div.caixa-procura div.pesquisa div[class^="tipo-"], div.banner div.search-wrapper div.caixa-procura div.pesquisa div.quartos {
     padding: 5px;
     font-size: 12px;
+  }
+  div.vantagens-era > p {
+    font-size: 20pt;
+  }
+  div.vantagens-era div.vantagens div.card {
+    width: 45%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  div.vantagens-era div.vantagens div.card > img {
+    margin: auto;
+  }
+  div.galeria div.fotos {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+  div.pesquisas-comuns > div div.topicos {
+    margin-top: 2rem;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  div.avaliar-imovel-wrapper div.avaliar-imovel p:nth-child(1) {
+    font-size: 12px;
+  }
+  div.avaliar-imovel-wrapper div.avaliar-imovel p:nth-child(2) {
+    font-size: 10px;
+  }
+  div.avaliar-imovel-wrapper div.avaliar-imovel button#avaliar-btn {
+    padding: 8px 10px;
+    font-size: 10px;
   }
 }
 
@@ -790,6 +1005,33 @@ div.hiding-menu div.languages ul li.sublinhado {
     margin: 1px 5px;
     font-size: 11px;
   }
+  div.galeria div.fotos {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-gap: 30px;
+  }
+  div.vantagens-era > p {
+    font-size: 15pt;
+  }
+  div.vantagens-era div.vantagens div.card {
+    width: 99%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  div.vantagens-era div.vantagens div.card p.card-description {
+    height: 70px;
+  }
+  div.vantagens-era div.vantagens div.card > img {
+    margin: auto;
+  }
+  .grid-span-2 {
+    grid-column: span 1;
+  }
   .site-width {
     width: 90%;
   }
@@ -797,6 +1039,13 @@ div.hiding-menu div.languages ul li.sublinhado {
     display: none;
   }
   nav#nav {
+    display: none;
+  }
+  div.avaliar-imovel-wrapper div.avaliar-imovel p:nth-child(1) {
+    font-size: 13px;
+    margin-right: 40px;
+  }
+  div.avaliar-imovel-wrapper div.avaliar-imovel p:nth-child(2) {
     display: none;
   }
 }
