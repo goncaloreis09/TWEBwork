@@ -32,6 +32,9 @@ html{
     font-family: 'Poppins', sans-serif;
 }
 
+.open-modal{
+    overflow: hidden;
+}
 
 .strong{
     font-weight: bold;
@@ -39,7 +42,7 @@ html{
 
 nav#nav{
     height: 6rem;
-    z-index: 999;
+    z-index: 4;
     position: sticky;
     top: 0;
     left: 0;
@@ -339,6 +342,9 @@ div.banner{
                             font-family: 'Poppins';
                         }
                     }
+                    >button{
+                        display: none;
+                    }
                 }
 
                 > button.procurar-btn{
@@ -360,6 +366,7 @@ div.banner{
             }
 
             div.opcoes{
+                position: relative;
                 > button {
                     width: 100%;
                     height: 100%;
@@ -714,7 +721,7 @@ footer{
     
 }
 
-div.avaliacao-modal{
+div.opcoes-modal{
     position: fixed;
     top: 0;
     left:0;
@@ -722,23 +729,106 @@ div.avaliacao-modal{
     height: 100%;
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding: 5vh 0;
-    z-index: 1;
-    div.avaliacao-imovel{
-        height: 90vh;
+    z-index: 5;
+    div.mais-opcoes{
+        height: fit-content;
         background-color: white;
         margin: auto;
         overflow: auto;
         border-radius: 10px;
-    
-       span#close-modal{
-           padding: 10px;
-           cursor: pointer;
-           font-weight: bold;
-           font-size: 28px;
-       }
+        width: 45%;
+        transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+        padding: 0 15px;
+        position: relative;
+        div.top-bar{
+            @include flex-center-center();
+            span#close-modal{
+                padding: 10px;
+                cursor: pointer;
+                font-weight: bold;
+                font-size: 28px;
+                flex:1;
+                &:hover{
+                    color: #c8102e;
+                }
+            }
+            >h3{
+                flex: 20;
+                text-align: center;
+            }
+
+        }
+
+        div.filtros{
+            margin-top: 20px;
+            padding: 10px;
+            span.label{
+                color: #c8102e;
+            }
+            >input{
+                margin-top: 10px;
+                padding: 5px;
+                font-family: 'Poppins';
+                width: 70px;
+                text-align: center;
+            }
+
+            div.idade-opcoes, div.garagem-opcoes, div.transportes-opcoes{
+                margin-top: 10px;
+                display: flex;
+                >div{
+                    margin-right: 3px;
+                    font-size: 13px;
+                    padding: 10px 25px;
+                    background-color: rgb(231, 231, 231);
+                    width: 130px;
+                    text-align: center;
+                    cursor: pointer;
+                    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+                    &:hover{
+                        border: 2px solid #c8102e;
+                        background-color: rgba(200, 16, 46, 0.2);
+                    }
+                }
+            }
+            div.transportes-opcoes{
+                margin-bottom: 5rem;
+            }
+        }
+        button.save-options{
+            border: none;
+            background-color: #c8102e;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height:3rem;
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-family: 'Poppins';
+            cursor: pointer;
+            &:hover{
+                background-color: #b4142e;
+            }
+        }
     }
 
 }
+
+div.opcoes-modal{
+    div.mais-opcoes{
+        div.filtros{
+            div.idade-opcoes, div.garagem-opcoes, div.transportes-opcoes{
+                div.opcao-active{
+                    border: 2px solid #dd5c71;
+                    background-color: rgba(200, 16, 46, 0.2);
+                }
+            }
+        }
+    }
+}
+
 
 .active-tab{
     color:#c8102e;
@@ -772,7 +862,7 @@ div.banner .mobile-banner{
 
 nav#mobile{
     height: 4rem;
-    z-index: 999;
+    z-index: 4;
     position: sticky;
     top: 0;
     left: 0;
@@ -897,6 +987,17 @@ div.hiding-menu{
             }
         }
     }
+
+    div.opcoes-modal{
+        div.mais-opcoes{
+            div.filtros{
+                margin: 0;
+                >div{
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
 }
 @media only screen and (max-width: 991px){
     html{
@@ -923,6 +1024,7 @@ div.hiding-menu{
         div.search-wrapper{
             div.caixa-procura{
                 div.pesquisa{
+                    flex: 8;
                     div[class^="tipo-"], div.quartos{
                         padding: 10px;
                     }
@@ -930,7 +1032,7 @@ div.hiding-menu{
                 }
             }
             div.opcoes{
-                display: none;
+                flex: 1;
             }
         }
     }
@@ -990,12 +1092,21 @@ div.hiding-menu{
     div.banner{
         div.search-wrapper{
             div.caixa-procura{
+                display: flex;
+                flex-direction: column;
                 div.pesquisa{
                     div[class^="tipo-"], div.quartos{
                         padding: 5px;
                         font-size: 12px;
                     }
     
+                }
+                div.opcoes{
+                    width: 100%;
+                    padding: 0 10px 0 0;
+                    >button{
+                        padding: 5px 0;
+                    }
                 }
             }
         }
@@ -1062,6 +1173,37 @@ div.hiding-menu{
             }
         }
     }
+
+    div.opcoes-modal{
+        div.mais-opcoes{
+            border-radius: 0;
+            position: absolute;
+            top: 0;
+            height: 100vh;
+            width: 100%;
+            div.top-bar{
+                span#close-modal{
+                    font-size: 38px;
+                }
+            }
+    
+            div.filtros{
+                div.idade-opcoes, div.garagem-opcoes, div.transportes-opcoes{
+                    span{
+                        font-size: 17px;
+                    }
+                }
+                div.transportes-opcoes{
+                    margin-bottom: 0;
+                }
+            }
+            button.save-options{
+                height:3rem;
+                font-size: 18px;
+            }
+        }
+    
+    }
 }
 
 
@@ -1078,6 +1220,8 @@ div.hiding-menu{
            top: 53vh;
            height: 27vh;
            div.caixa-procura{
+               display: flex;
+               flex-direction: column;
                flex-wrap: wrap;
                margin-top: 4.5vh;
                div.pesquisa{
@@ -1092,14 +1236,30 @@ div.hiding-menu{
                        width: calc(100vw*0.35);
                        border-left: 1px solid gray;
                    }
-                   div.localidade, button.procurar-btn{
+                   button.procurar-btn{
                        width: calc(100vw*0.9);
                    }
 
                    div.localidade{
+                       display: flex;
+                       align-items: center;
+                       justify-content: space-between;
                        height: 40px;
                        border-top: 1px solid rgba(148, 148, 148, 0.5);
                        font-size: 13px;
+                       width:100%;
+                       >button{
+                           display: block;
+                            height: 40px;
+                            width: calc((100vw*0.9)/4);
+                            font-family: 'Poppins', sans-serif;
+                            border: none;
+                            background-color: gray;
+                            color: white;
+                            border-radius: 0px;
+                            transform: translateX(1.245rem);
+                            cursor: pointer;
+                       }
                    }
 
                    button.procurar-btn{
@@ -1188,5 +1348,21 @@ div.hiding-menu{
             }
 
         }
+    }
+    div.opcoes-modal{
+        div.mais-opcoes{
+            div.filtros{
+                div.idade-opcoes, div.garagem-opcoes, div.transportes-opcoes{
+                    >span{
+                        font-size: 12px;
+                    }
+                    >div{
+                        padding-left: 12px;
+                        padding-right: 12px;
+                    }
+                }
+            }
+        }
+    
     }
 }

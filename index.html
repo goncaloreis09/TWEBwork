@@ -273,16 +273,65 @@
                     </div>
                     <div class="localidade">
                         <input id="dado-localidade" type="text" name="" id="" placeholder="Localidade (Concelho, Área)">
+                        <button id="opcoes-btn"><i class="fas fa-search"></i>Opções</button>
+
                     </div>
                     <button class="procurar-btn">Pesquisar</button>
                 </div>
                 <div class="opcoes">
-                    <button><i class="fas fa-search"></i>Opções</button>
-                    <div class="mais-opcoes">
-                        <h2 class="strong">Mais opções</h2>
+                    <button id="opcoes-btn"><i class="fas fa-search"></i>Opções</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="opcoes-modal not-show">
+        <div class = "mais-opcoes">
+            <div class="top-bar">
+                <span id="close-modal">&timesbar;</span>
+                <h3 class="strong">Mais Opções</h3>
+            </div>
+            <div class="filtros">
+                <span class="label">Área Útil</span>
+                <br>
+                <input type="text" placeholder="200"> - 
+                <input type="text" placeholder="200"> m²
+                <br>
+                <br>
+                <span class="label">Idade do Imóvel</span>
+                <div class="idade-opcoes">
+                    <div id="5-anos">
+                        <p>Até 5 anos</p>
+                    </div>
+                    <div id="10-anos">
+                        <p>5 a 10 anos</p>
+                    </div>
+                    <div id="10+-anos">
+                        <p>+10 anos</p>
+                    </div>
+                </div>
+                <br>
+                <span class="label">Garagem</span>
+                <div class="garagem-opcoes">
+                    <div id="garagem-sim" class="opcao-active">
+                        <p>Sim</p>
+                    </div>
+                    <div id="garagem-nao">
+                        <p>Não</p>
+                    </div>
+                </div>
+                <br>
+                <span class="label">Proximidade a transportes públicos</span>
+                <div class="transportes-opcoes">
+                    <div id="transportes-sim">
+                        <p>Sim</p>
+                    </div>
+                    <div id="transportes-nao">
+                        <p>Não</p>
                     </div>
                 </div>
             </div>
+            <button class="save-options">Guardar</button>
         </div>
     </div>
 

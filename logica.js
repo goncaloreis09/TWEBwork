@@ -23,6 +23,12 @@ const seletores = document.querySelector(".seletor").children
 const contadorHist = document.querySelector("#hist-counter")
 const painelHist = document.querySelector(".historico-pesquisas")
 
+//Variáveis destinadas à
+//Funcionalidade de opções de compra
+const opcoesBtn = document.querySelectorAll("#opcoes-btn")
+const closeOpcoes = document.querySelector("#close-modal")
+const opcoesModal = document.querySelector(".opcoes-modal")
+const saveOptions = document.querySelector(".save-options")
 
 
 //Variável que guarda a posição inicial do scroll para puder saber quando o utilizador está a dar scroll para cima ou para baixo
@@ -92,7 +98,7 @@ for(let j=0; j<opcoes.length; j++){
     }
 }
 
-
+//Mudar de tab na galeria
 for(let i=0; i<seletores.length; i++){
     seletores[i].addEventListener("click", () =>{
         seletores[i].classList.add("active-tab")
@@ -103,6 +109,29 @@ for(let i=0; i<seletores.length; i++){
         }
     })
 }
+
+
+//Abrir Modal das Opções desktop e tablet
+opcoesBtn[1].addEventListener("click", () =>{
+    opcoesModal.classList.remove("not-show")
+    body.classList.add("open-modal")
+})
+
+//Abrir Modal das Opções mobile
+opcoesBtn[0].addEventListener("click", () =>{
+    opcoesModal.classList.remove("not-show")
+    body.classList.add("open-modal")
+})
+
+//Fechar Modal das Opções
+closeOpcoes.addEventListener("click", () =>{
+    opcoesModal.classList.add("not-show")
+    body.classList.remove("open-modal")
+})
+saveOptions.addEventListener("click", () =>{
+    opcoesModal.classList.add("not-show")
+    body.classList.remove("open-modal")
+})
 
 
 // const dadosPesquisa = document.querySelectorAll(".dado-pesquisa")
