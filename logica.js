@@ -23,6 +23,11 @@ const seletores = document.querySelector(".seletor").children
 const contadorHist = document.querySelector("#hist-counter")
 const painelHist = document.querySelector(".historico-pesquisas")
 
+//avaliar imovel
+const avaliarModal = document.querySelector("#avaliarModal")
+const triggerAvaliarModal = document.querySelector("#avaliar-btn")
+const closeModalTrigger = document.querySelector("#close-modal")
+
 
 //Variável que guarda a posição inicial do scroll para puder saber quando o utilizador está a dar scroll para cima ou para baixo
 var posicaoScroll = window.scrollY
@@ -103,6 +108,21 @@ for(let i=0; i<seletores.length; i++){
     })
 }
 
+
+triggerAvaliarModal.addEventListener("click", () =>{
+    avaliarModal.classList.remove("not-show")
+    TopScroll = document.documentElement.scrollTop;
+    LeftScroll = window.pageXOffset || document.documentElement.scrollLeft,
+    
+    // if scroll happens, set it to the previous value
+    window.onscroll = function() {
+        window.scrollTo(LeftScroll, TopScroll);
+    }
+})
+
+closeModalTrigger.onclick = () => {
+    avaliarModal.classList.add("not-show")
+}
 
 // const dadosPesquisa = document.querySelectorAll(".dado-pesquisa")
 // const localidade = document.querySelector("#dado-localidade")

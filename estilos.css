@@ -501,11 +501,30 @@ div.galeria div.fotos {
 
 div.galeria div.fotos > div {
   cursor: pointer;
+  position: relative;
 }
 
 div.galeria div.fotos > div > img {
   width: 100%;
   height: 100%;
+}
+
+div.galeria div.fotos > div div.house-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 0%;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  color: white;
+}
+
+div.galeria div.fotos > div:hover div.house-info {
+  height: 80%;
+  color: #313131;
 }
 
 .grid-span-2 {
@@ -884,6 +903,33 @@ footer div.copyright div.right div.language div.language-options > ul li {
 footer div.copyright div.right div.language div.language-options > ul li:hover {
   color: #c8102e;
   background-color: #dfdfdf;
+}
+
+div.avaliacao-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+  padding: 5vh 0;
+  z-index: 1;
+}
+
+div.avaliacao-modal div.avaliacao-imovel {
+  height: 90vh;
+  background-color: white;
+  margin: auto;
+  overflow: auto;
+  border-radius: 10px;
+}
+
+div.avaliacao-modal div.avaliacao-imovel span#close-modal {
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 28px;
 }
 
 .active-tab {
