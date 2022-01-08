@@ -29,6 +29,12 @@ const opcoesBtn = document.querySelectorAll("#opcoes-btn")
 const closeOpcoes = document.querySelector("#close-modal")
 const opcoesModal = document.querySelector(".opcoes-modal")
 const saveOptions = document.querySelector(".save-options")
+const inputAreaUtilMin = document.getElementById("areaUtilMin")
+const inputAreaUtilMax = document.getElementById("areaUtilMax")
+const idadeImovel = document.querySelector(".idade-opcoes").children
+const garagem = document.querySelector(".garagem-opcoes").children
+const transportes = document.querySelector(".transportes-opcoes").children
+const clearInputs = document.querySelector("#clear-inputs")
 
 
 //Variável que guarda a posição inicial do scroll para puder saber quando o utilizador está a dar scroll para cima ou para baixo
@@ -128,10 +134,77 @@ closeOpcoes.addEventListener("click", () =>{
     opcoesModal.classList.add("not-show")
     body.classList.remove("open-modal")
 })
+
+// Guardar informações das opções e fechar modal
 saveOptions.addEventListener("click", () =>{
+    var areaUtilMin = undefined;
+    var areaUtilMax = undefined;
+    var idade = undefined;
+    var temGaragem = undefined;
+    var temTransportes = undefined;
+
+    if(inputAreaUtilMax.value)
+        areaUtilMax = inputAreaUtilMax.value
+    if(inputAreaUtilMin.value)
+        areaUtilMin = inputAreaUtilMin.value
+    
+    for(let i=0; i<idadeImovel.length; i++){
+        if(idadeImovel[i].classList.contains("opcao-active")){
+            let x = idadeImovel[i].id.split("-")[0] //Guardar resposta momentaneamente
+            idade = x
+        }
+    }
+    for(let i=0; i<garagem.length; i++){
+        if(garagem[i].classList.contains("opcao-active")){
+            let x = garagem[i].id.split("-")[1] //Guardar resposta momentaneamente
+            temGaragem = x
+        }
+    }
+    for(let i=0; i<transportes.length; i++){
+        if(transportes[i].classList.contains("opcao-active")){
+            let x = transportes[i].id.split("-")[1] //Guardar resposta momentaneamente
+            temTransportes = x
+        }
+    }
+
     opcoesModal.classList.add("not-show")
     body.classList.remove("open-modal")
 })
+
+
+//Selecionar filtros
+for(let k=0; k<3; k++){
+    let array
+    if(k==0)
+        array = idadeImovel
+    else if(k == 1)
+        array = garagem
+    else
+        array = transportes
+
+    for(let i=0; i<array.length; i++){
+        array[i].addEventListener("click", () => {
+            array[i].classList.toggle("opcao-active")
+            for(let j=0; j<array.length; j++){
+                if(j!=i)
+                    array[j].classList.remove("opcao-active")
+            }
+        })
+    }
+
+    //Limpar seleções (filtros)
+    clearInputs.addEventListener("click", () =>{
+        for(let i=0; i<array.length; i++){
+            array[i].classList.remove("opcao-active")
+        }
+
+        inputAreaUtilMin.value = null
+        inputAreaUtilMax.value = null
+    })
+}
+
+
+
 
 
 // const dadosPesquisa = document.querySelectorAll(".dado-pesquisa")

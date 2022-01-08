@@ -977,6 +977,12 @@ div.opcoes-modal div.mais-opcoes div.top-bar > h3 {
   text-align: center;
 }
 
+div.opcoes-modal div.mais-opcoes div.top-bar > p {
+  font-size: 14px;
+  color: #c8102e;
+  cursor: pointer;
+}
+
 div.opcoes-modal div.mais-opcoes div.filtros {
   margin-top: 20px;
   padding: 10px;
@@ -1405,8 +1411,9 @@ div.hiding-menu ul.hiding-menu-options li div.dropdown-menu ul#cover li.no-under
     background-image: url("./img/bannerMobile2.png");
     background-size: 100%;
     background-position: center;
-    height: 80vh;
     width: 100%;
+    height: 80vh;
+    padding-top: 205,37%;
   }
   div.banner div.search-wrapper {
     position: absolute;

@@ -290,12 +290,13 @@
             <div class="top-bar">
                 <span id="close-modal">&timesbar;</span>
                 <h3 class="strong">Mais Opções</h3>
+                <p id="clear-inputs">Limpar</p>
             </div>
             <div class="filtros">
                 <span class="label">Área Útil</span>
                 <br>
-                <input type="text" placeholder="200"> - 
-                <input type="text" placeholder="200"> m²
+                <input type="number" value="" placeholder="100" id="areaUtilMin"> - 
+                <input type="number" value="" placeholder="500" id="areaUtilMax"> m²
                 <br>
                 <br>
                 <span class="label">Idade do Imóvel</span>
@@ -313,7 +314,7 @@
                 <br>
                 <span class="label">Garagem</span>
                 <div class="garagem-opcoes">
-                    <div id="garagem-sim" class="opcao-active">
+                    <div id="garagem-sim">
                         <p>Sim</p>
                     </div>
                     <div id="garagem-nao">
@@ -334,6 +335,8 @@
             <button class="save-options">Guardar</button>
         </div>
     </div>
+
+    
 
     <!-- Fotos das casas -->
 
