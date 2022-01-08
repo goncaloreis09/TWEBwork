@@ -276,7 +276,7 @@
                         <button id="opcoes-btn"><i class="fas fa-search"></i>Opções</button>
 
                     </div>
-                    <button class="procurar-btn">Pesquisar</button>
+                    <button class="procurar-btn lock-btn">Pesquisar</button>
                 </div>
                 <div class="opcoes">
                     <button id="opcoes-btn"><i class="fas fa-search"></i>Opções</button>
@@ -293,13 +293,13 @@
                 <p id="clear-inputs">Limpar</p>
             </div>
             <div class="filtros">
-                <span class="label">Área Útil</span>
+                <span class="label">Área Útil *</span>
                 <br>
                 <input type="number" value="" placeholder="100" id="areaUtilMin"> - 
                 <input type="number" value="" placeholder="500" id="areaUtilMax"> m²
                 <br>
                 <br>
-                <span class="label">Idade do Imóvel</span>
+                <span class="label">Idade do Imóvel *</span>
                 <div class="idade-opcoes">
                     <div id="5-anos">
                         <p>Até 5 anos</p>
@@ -336,6 +336,58 @@
         </div>
     </div>
 
+    <div class="resultados-modal not-show">
+        <div class="resultados-painel site-width">
+            <div class="top-bar">
+                <span id="close-modal-resultados">&timesbar;</span>
+                <h3 class="strong">Resultados</h3>
+            </div>
+            <div class="resultados">
+                <div class="resultado-card">
+                    <div class="local">
+                        <p class="strong">Giesteira</p>
+                        <p>Aldeia</p>
+                    </div>
+                    <div class="details">
+                        <p><i class="fas fa-home"></i> Moradia, T3</p>
+                        <p><i class="fas fa-layer-group"></i> 200 m²</p>
+                        <p><i class="fas fa-warehouse"></i> Com Garagem</p>
+                        <p><i class="fas fa-bus"></i> <span class="sem-detail strong">Sem</span> transportes públicos nas proximidades</p>
+                    </div>
+                    <h3>120.000€</h3>
+                    <button>Financiamento</button>
+                </div>
+                <div class="resultado-card">
+                    <div class="local">
+                        <p class="strong">Fátima</p>
+                        <p>Vila</p>
+                    </div>
+                    <div class="details">
+                        <p><i class="fas fa-home"></i> Moradia, T3</p>
+                        <p><i class="fas fa-layer-group"></i> 200 m²</p>
+                        <p><i class="fas fa-warehouse"></i> Com Garagem</p>
+                        <p><i class="fas fa-bus"></i> <span class="sem-detail strong">Sem</span> transportes públicos nas proximidades</p>
+                    </div>
+                    <h3>120.000€</h3>
+                    <button>Financiamento</button>
+                </div>
+                <div class="resultado-card">
+                    <div class="local">
+                        <p class="strong">Porto</p>
+                        <p>Cidade</p>
+                    </div>
+                    <div class="details">
+                        <p><i class="fas fa-home"></i> Moradia, T3</p>
+                        <p><i class="fas fa-layer-group"></i> 200 m²</p>
+                        <p><i class="fas fa-warehouse"></i> Com Garagem</p>
+                        <p><i class="fas fa-bus"></i> <span class="sem-detail strong">Sem</span> transportes públicos nas proximidades</p>
+                    </div>
+                    <h3>120.000€</h3>
+                    <button>Financiamento</button>
+                </div>
+            </div>
+        </div>
+    </div>
     
 
     <!-- Fotos das casas -->

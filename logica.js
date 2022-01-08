@@ -36,6 +36,10 @@ const garagem = document.querySelector(".garagem-opcoes").children
 const transportes = document.querySelector(".transportes-opcoes").children
 const clearInputs = document.querySelector("#clear-inputs")
 
+//Resultados da pesquisa
+const painelResultados = document.querySelector(".resultados-modal")
+const closePainelResultados = document.querySelector("#close-modal-resultados")
+
 
 //Variável que guarda a posição inicial do scroll para puder saber quando o utilizador está a dar scroll para cima ou para baixo
 var posicaoScroll = window.scrollY
@@ -204,7 +208,16 @@ for(let k=0; k<3; k++){
 }
 
 
+//Abrir Painel de Resultados
+btnPesquisar.addEventListener("click", () =>{
+    painelResultados.classList.remove("not-show")
+    body.classList.add("open-modal")
+})
 
+closePainelResultados.addEventListener("click", () =>{
+    painelResultados.classList.add("not-show")
+    body.classList.remove("open-modal")
+})
 
 
 // const dadosPesquisa = document.querySelectorAll(".dado-pesquisa")

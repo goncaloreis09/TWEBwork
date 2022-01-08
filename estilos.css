@@ -417,6 +417,7 @@ div.banner div.search-wrapper div.caixa-procura div.pesquisa div.localidade > bu
 }
 
 div.banner div.search-wrapper div.caixa-procura div.pesquisa > button.procurar-btn {
+  position: relative;
   width: 16%;
   border: none;
   border-top-right-radius: 3px;
@@ -937,7 +938,9 @@ div.opcoes-modal div.mais-opcoes {
   margin: auto;
   overflow: auto;
   border-radius: 10px;
-  width: 45%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   -webkit-transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
   transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
   padding: 0 15px;
@@ -1050,6 +1053,127 @@ div.opcoes-modal div.mais-opcoes button.save-options:hover {
 div.opcoes-modal div.mais-opcoes div.filtros div.idade-opcoes div.opcao-active, div.opcoes-modal div.mais-opcoes div.filtros div.garagem-opcoes div.opcao-active, div.opcoes-modal div.mais-opcoes div.filtros div.transportes-opcoes div.opcao-active {
   border: 2px solid #dd5c71;
   background-color: rgba(200, 16, 46, 0.2);
+}
+
+div.resultados-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+  padding: 5vh 0;
+  z-index: 5;
+}
+
+div.resultados-modal div.resultados-painel {
+  margin: auto;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px 0 30px 0;
+  -webkit-transition: all 1s ease-in;
+  transition: all 1s ease-in;
+}
+
+div.resultados-modal div.resultados-painel div.top-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.resultados-modal div.resultados-painel div.top-bar span#close-modal-resultados {
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 38px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+div.resultados-modal div.resultados-painel div.top-bar span#close-modal-resultados:hover {
+  color: #c8102e;
+}
+
+div.resultados-modal div.resultados-painel div.top-bar > h3 {
+  -webkit-box-flex: 20;
+      -ms-flex: 20;
+          flex: 20;
+  text-align: center;
+  padding-top: 10px;
+}
+
+div.resultados-modal div.resultados-painel div.resultados {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+div.resultados-modal div.resultados-painel div.resultados div.resultado-card {
+  width: 320px;
+  border: 1px solid gray;
+  margin: 10px;
+  border-radius: 1px;
+  padding: 20px;
+  background-color: whitesmoke;
+}
+
+div.resultados-modal div.resultados-painel div.resultados div.resultado-card div.local {
+  text-align: center;
+}
+
+div.resultados-modal div.resultados-painel div.resultados div.resultado-card div.local > p:nth-child(2) {
+  font-size: 12px;
+  color: #c8102e;
+}
+
+div.resultados-modal div.resultados-painel div.resultados div.resultado-card div.details {
+  text-align: left;
+  font-size: 13px;
+  margin: 20px 0 30px 0;
+}
+
+div.resultados-modal div.resultados-painel div.resultados div.resultado-card > h3 {
+  text-align: center;
+  color: #c8102e;
+}
+
+div.resultados-modal div.resultados-painel div.resultados div.resultado-card > button {
+  margin: 10px 0 0 0;
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 0;
+  color: white;
+  background-color: #c8102e;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Poppins';
+  cursor: pointer;
+}
+
+div.resultados-modal div.resultados-painel div.resultados div.resultado-card > button:hover {
+  background-color: #b4142e;
+}
+
+.sem-detail {
+  color: red;
+  text-decoration: underline;
 }
 
 .active-tab {
