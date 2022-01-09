@@ -39,6 +39,22 @@ const clearInputs = document.querySelector("#clear-inputs")
 //Resultados da pesquisa
 const painelResultados = document.querySelector(".resultados-modal")
 const closePainelResultados = document.querySelector("#close-modal-resultados")
+const erros = document.querySelector(".erros-pesquisa")
+const entendiBtn = document.querySelector("#entendi-btn")
+const aldeiaCard = document.getElementById("aldeia")
+const vilaCard = document.getElementById("vila")
+const cidadeCard = document.getElementById("cidade")
+
+
+//Preços das zonas
+const aldeia = 1200 //Zona 1
+const vila = 2000 //Zona 2
+const cidade = 2500 //Zona 3
+
+//Nomes
+const aldeias = ["Favaios", "Sistelo", "Vila da Ponte"]
+const vilas = ["Penafiel", "Soure", "Alcobaça"]
+const cidades = ["Porto", "Coimbra", "Lisboa"]
 
 
 //Variável que guarda a posição inicial do scroll para puder saber quando o utilizador está a dar scroll para cima ou para baixo
@@ -140,34 +156,50 @@ closeOpcoes.addEventListener("click", () =>{
 })
 
 // Guardar informações das opções e fechar modal
+var areaUtilMin = undefined;
+var areaUtilMax = undefined;
+var idade = undefined;
+var temGaragem = undefined;
+var temTransportes = undefined;
 saveOptions.addEventListener("click", () =>{
-    var areaUtilMin = undefined;
-    var areaUtilMax = undefined;
-    var idade = undefined;
-    var temGaragem = undefined;
-    var temTransportes = undefined;
 
     if(inputAreaUtilMax.value)
         areaUtilMax = inputAreaUtilMax.value
     if(inputAreaUtilMin.value)
         areaUtilMin = inputAreaUtilMin.value
     
+    let selecionadoIdade = false
     for(let i=0; i<idadeImovel.length; i++){
         if(idadeImovel[i].classList.contains("opcao-active")){
             let x = idadeImovel[i].id.split("-")[0] //Guardar resposta momentaneamente
             idade = x
+            selecionadoIdade = true
+        }else{
+            if(!selecionadoIdade)
+                idade = undefined
         }
     }
+    let selecionadoGaragem = false
     for(let i=0; i<garagem.length; i++){
         if(garagem[i].classList.contains("opcao-active")){
             let x = garagem[i].id.split("-")[1] //Guardar resposta momentaneamente
             temGaragem = x
+            selecionadoGaragem = true
+        }else{
+            if(!selecionadoGaragem)
+                temGaragem = undefined
         }
     }
+
+    let selecionadoTransportes = false
     for(let i=0; i<transportes.length; i++){
         if(transportes[i].classList.contains("opcao-active")){
             let x = transportes[i].id.split("-")[1] //Guardar resposta momentaneamente
             temTransportes = x
+            selecionadoTransportes = true
+        }else{
+            if(!selecionadoTransportes)
+                temTransportes = undefined
         }
     }
 
@@ -210,11 +242,174 @@ for(let k=0; k<3; k++){
 
 //Abrir Painel de Resultados
 btnPesquisar.addEventListener("click", () =>{
+    var tipoImovel = undefined
+    var qtdQuartos = undefined
+    var preco
+    let randomArray = ["Com", "Sem"]
+
+    //Verificar se tem conteúdo válido
+    if(dadosPesquisa[2].textContent != "quartos"){
+        let qtd = dadosPesquisa[2].textContent.split(" ")[0]
+        qtdQuartos = qtd
+    }
+
+    //Verificar se tem conteúdo válido
+    if(dadosPesquisa[1].textContent != "tipo imóvel")
+        tipoImovel = dadosPesquisa[1].textContent
+
+
+    //Verificar se falta algum campo OBRIGATÓRIO por preencher
+    if(tipoImovel == undefined || areaUtilMax == undefined || idade == undefined){
+        erros.classList.remove("not-show")
+        erros.children[4].innerText = ""
+        if(tipoImovel == undefined)
+            erros.children[4].innerText += "Tipo de Imóvel, "
+        if(areaUtilMax == undefined)
+            erros.children[4].innerText += "Área Útil, "
+        if(idade == undefined)
+            erros.children[4].innerText += "Idade do Imóvel"
+    }else{
+        erros.classList.add("not-show")
+    }
+
+    //Escolher nome random para diferentes zonas
+    //Explicação: aldeias[numero-random(0 até ao comprimento do array)]
+    let nomeAldeia = aldeias[Math.floor(Math.random() * aldeias.length)] 
+    aldeiaCard.children[0].children[0].innerText = nomeAldeia
+    
+    let nomeVila = vilas[Math.floor(Math.random() * vilas.length)] 
+    vilaCard.children[0].children[0].innerText = nomeVila
+    
+    let nomeCidade = cidades[Math.floor(Math.random() * cidades.length)] 
+    cidadeCard.children[0].children[0].innerText = nomeCidade
+
+
+    for(let i=0; i<3; i++){
+        let area
+        let idade2 //Vai guardar os valores gerados para a idade
+        //Gerar área random se tiver area minima e area máxima
+        if(areaUtilMax != undefined && areaUtilMin != undefined){
+            //Função utilizada: Math.floor(Math.random() * (max - min)) + min
+            //parseInt() passa os valores para inteiros
+            area = Math.floor(Math.random() * (parseInt(areaUtilMax) - parseInt(areaUtilMin))) + parseInt(areaUtilMin)
+        }else if(areaUtilMax!=undefined){
+            //Senão guarda o valor da Área Útil máxima
+            area = parseInt(areaUtilMax)
+        }
+
+        //Se quartos == undefined então gera nº de quartos random até 6
+        //Este valor mantém-se igual para as 3 casas
+        if(qtdQuartos == undefined){
+            let qtd = Math.floor(Math.random() * 6) + 1
+            qtdQuartos = qtd
+        }
+        //Se o valor for == 4 significa que o utilizador selecionou a opção "4 ou mais"
+        //Neste caso, se for confirmado e o loop estiver na sua 1ª execução
+        //Decide um valor random entre 4 e 6
+        else if(qtdQuartos == 4 && i== 0){
+            let qtd = Math.floor(Math.random() * (7 - 4)) + 4
+            qtdQuartos = qtd
+        }
+
+        //Caso idade == 5, gera um valor entre 0 e 5
+        // e guarda o coeficiente de desvalorização
+        if(idade == 5){
+            coeficienteDesvalorizacao = 1
+            idade2 = Math.floor(Math.random() * 5) + 1
+        }else if(idade == 10){//Caso idade == 10, gera um valor entre 5 e 10
+            coeficienteDesvalorizacao = 0.95
+            idade2 = Math.floor(Math.random() * (11-6)) + 6
+        }else{//Caso idade == 5, gera um valor entre 10 e 25 (para não ser uma idade absurda)
+            coeficienteDesvalorizacao = 0.9
+            idade2 = Math.floor(Math.random() * (26-11)) + 11
+        }
+
+        //Adicionar coeficiente de Desvalorização das casas relativos a garagem e transportes próximos
+        if(temGaragem == "nao")
+            coeficienteDesvalorizacao *= 0.95
+        
+        if(temTransportes == "nao")
+            coeficienteDesvalorizacao *= 0.9
+
+
+        if(i==0){
+            card = aldeiaCard
+            preco = area * aldeia * coeficienteDesvalorizacao
+        }else if(i==1){
+            card = vilaCard
+            preco = area * vila * coeficienteDesvalorizacao
+        }else{
+            card = cidadeCard
+            preco = area * cidade * coeficienteDesvalorizacao
+        }
+
+        card.children[2].innerText = preco + " €"
+        card.children[1].children[1].innerHTML = "<i class='fas fa-layer-group'></i> " + area + "m²"
+        card.children[1].children[0].innerHTML = "<i class='fas fa-home'></i> " + tipoImovel + ", T" + qtdQuartos + ", " + idade2 + " anos"
+   
+        
+        //Caso o utilizador não tenha decidido se quer ou não Garagem ou Transportes
+        //Gera valores random
+        if(temGaragem == undefined){
+            let x //Variável apenas para auxiliar na estrutura de decisão
+            x = randomArray[Math.floor(Math.random() * randomArray.length)]
+            if(x == "Com"){
+                card.children[1].children[2].children[1].classList.add("com-detail")
+                card.children[1].children[2].children[1].classList.remove("sem-detail")
+            }else{
+                card.children[1].children[2].children[1].classList.remove("com-detail")
+                card.children[1].children[2].children[1].classList.add("sem-detail")
+            }
+            card.children[1].children[2].children[1].innerText = x
+        }else{
+            if(temGaragem == "sim"){
+                card.children[1].children[2].children[1].classList.add("com-detail")
+                card.children[1].children[2].children[1].classList.remove("sem-detail")
+                card.children[1].children[2].children[1].innerText = "Com"
+            }else{
+                card.children[1].children[2].children[1].classList.remove("com-detail")
+                card.children[1].children[2].children[1].classList.add("sem-detail")
+                card.children[1].children[2].children[1].innerText = "Sem"
+            }
+        }
+
+        if(temTransportes == undefined){
+            let x //Variável apenas para auxiliar na estrutura de decisão
+            x = randomArray[Math.floor(Math.random() * randomArray.length)]
+            if(x == "Com"){
+                card.children[1].children[3].children[1].classList.add("com-detail")
+                card.children[1].children[3].children[1].classList.remove("sem-detail")
+            }else{
+                card.children[1].children[3].children[1].classList.remove("com-detail")
+                card.children[1].children[3].children[1].classList.add("sem-detail")
+            }
+            card.children[1].children[3].children[1].innerText = x
+        }else{
+            if(temTransportes == "sim"){
+                card.children[1].children[3].children[1].classList.add("com-detail")
+                card.children[1].children[3].children[1].classList.remove("sem-detail")
+                card.children[1].children[3].children[1].innerText = "Com"
+            }else{
+                card.children[1].children[3].children[1].classList.remove("com-detail")
+                card.children[1].children[3].children[1].classList.add("sem-detail")
+                card.children[1].children[3].children[1].innerText = "Sem"
+            }
+        }
+    }
+
+    //Abrir
     painelResultados.classList.remove("not-show")
     body.classList.add("open-modal")
 })
 
+//Fechar Painel Resultados
 closePainelResultados.addEventListener("click", () =>{
+    painelResultados.classList.add("not-show")
+    body.classList.remove("open-modal")
+})
+
+//Fechar Painel Resultados
+entendiBtn.addEventListener("click", () =>{
     painelResultados.classList.add("not-show")
     body.classList.remove("open-modal")
 })
