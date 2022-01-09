@@ -45,6 +45,15 @@ const aldeiaCard = document.getElementById("aldeia")
 const vilaCard = document.getElementById("vila")
 const cidadeCard = document.getElementById("cidade")
 
+//Financiamento
+const financiarBtn = document.querySelectorAll(".financiar-btn")
+const financiamento = document.getElementById("financiamento")
+const inputPrecoFinanciamento = document.getElementById("valorFinanciamento")
+const inputRangeAnosFinanciamento = document.getElementById("rangeAnos")
+const inputAnosFinanciamento = document.getElementById("valueRange")
+const inputSpread = document.getElementsByName("spread")
+const formFinanciamento = document.getElementById("form-financiamento")
+const propostas = document.querySelector(".propostas-financiamento")
 
 //Preços das zonas
 const aldeia = 1200 //Zona 1
@@ -262,6 +271,7 @@ btnPesquisar.addEventListener("click", () =>{
     if(tipoImovel == undefined || areaUtilMax == undefined || idade == undefined){
         erros.classList.remove("not-show")
         erros.children[4].innerText = ""
+        painelResultados.children[0].style.overflow = "hidden"
         if(tipoImovel == undefined)
             erros.children[4].innerText += "Tipo de Imóvel, "
         if(areaUtilMax == undefined)
@@ -270,6 +280,7 @@ btnPesquisar.addEventListener("click", () =>{
             erros.children[4].innerText += "Idade do Imóvel"
     }else{
         erros.classList.add("not-show")
+        painelResultados.children[0].style.overflow = "auto"
     }
 
     //Escolher nome random para diferentes zonas
@@ -395,6 +406,10 @@ btnPesquisar.addEventListener("click", () =>{
                 card.children[1].children[3].children[1].innerText = "Sem"
             }
         }
+
+        //Definir o id dos butoes para o preço da respetiva casa
+        //Para ajudar na definição do valor total do crédito
+        card.children[3].id = preco
     }
 
     //Abrir
@@ -406,6 +421,13 @@ btnPesquisar.addEventListener("click", () =>{
 closePainelResultados.addEventListener("click", () =>{
     painelResultados.classList.add("not-show")
     body.classList.remove("open-modal")
+    for(let i=0; i<financiarBtn.length; i++){
+        financiarBtn[i].parentElement.classList.remove("hide-resultado")
+        financiarBtn[i].parentElement.classList.remove("add-animation")
+    }
+
+    financiamento.classList.add("esconder-financiamento")
+    propostas.classList.add("not-show")
 })
 
 //Fechar Painel Resultados
@@ -415,6 +437,100 @@ entendiBtn.addEventListener("click", () =>{
 })
 
 
+//Parte do financiamento
+//--------------------------
+//--------------------------
+//Esconder os outros cards quando um é selecionado
+for(let i=0; i<financiarBtn.length; i++){
+    financiarBtn[i].addEventListener("click", ()=>{
+        financiamento.classList.toggle("esconder-financiamento")
+        inputPrecoFinanciamento.value = financiarBtn[i].id
+        
+        if(!propostas.classList.contains("not-show"))
+            propostas.classList.add("not-show")
+
+        for(let j=0; j<financiarBtn.length; j++){
+            if(j!=i){
+                if(financiarBtn[j].parentElement.classList.contains("add-animation")){
+                    financiarBtn[j].parentElement.classList.toggle("add-animation")
+                    financiarBtn[j].parentElement.classList.remove("hide-resultado")
+                }else{
+                    financiarBtn[j].parentElement.classList.toggle("add-animation")
+                    financiarBtn[j].parentElement.addEventListener("animationend", ()=>{
+                        financiarBtn[j].parentElement.classList.add("hide-resultado")
+                    })
+                }
+            }
+        }
+        
+//     for(let k=0; k<inputSpread.length;k++){
+//         let spread = parseFloat((Math.random() * (5.0 - 1.0) + 1.0).toFixed(2))
+//         inputSpread[k].value = spread
+        
+//         let x = "label-spread" + (k+1)
+//         let label = document.getElementById(x)
+//         label.innerText = spread + "%"
+// }
+
+    })
+}
+
+inputRangeAnosFinanciamento.addEventListener("input", ()=>{
+    inputAnosFinanciamento.value = inputRangeAnosFinanciamento.value
+})
+inputAnosFinanciamento.addEventListener("input", ()=>{
+    if(inputAnosFinanciamento.value)
+        inputRangeAnosFinanciamento.value = inputAnosFinanciamento.value
+})
+
+//Por as propostas de acordo com o pretendido
+formFinanciamento.addEventListener("submit", (e) =>{
+    e.preventDefault()
+    propostas.classList.remove("not-show")
+
+    let spread = []
+
+    for(let i=1; i<=3; i++){
+        spread[i] =parseFloat((Math.random() * (5.0 - 1.0) + 1.0).toFixed(2))
+    }
+    let valorEmprestimo
+    let taeg
+    let montante = inputPrecoFinanciamento.value
+    let mensalidade
+    let entrada
+
+
+    for(let i=1; i<propostas.children.length; i++){
+        let nomeSpread = "taxaSpread" + i
+        let nomeJuro = "taxaJuro" + i
+        let nomeRenda = "taxaRenda" + i
+        let nomeAnos = "taxaAnos" + i
+        let nomeMontante = "montante-pedido" + i
+        let nomeEmprestimo = "valor-emprestimo" + i
+
+        valorEmprestimo = inputPrecoFinanciamento.value * (spread[i] + 0.5)
+        taeg = parseFloat(spread[i]) + 0.5
+        mensalidade = valorEmprestimo / (inputAnosFinanciamento.value * 12)
+        entrada = parseFloat((Math.random() * (0.1 - 0.05) + 0.05).toFixed(2))
+
+        let taxaSpread = document.getElementById(nomeSpread)
+        let taxaJuro = document.getElementById(nomeJuro)
+        let taxaRenda = document.getElementById(nomeRenda)
+        let taxaAnos = document.getElementById(nomeAnos)
+        let valorPedido = document.getElementById(nomeMontante)
+        let emprestimo = document.getElementById(nomeEmprestimo)
+
+
+        taxaSpread.innerText = spread[i]
+        taxaJuro.innerText = taeg.toFixed(2)
+        valorPedido.innerText = montante + " €"
+        emprestimo.innerText = valorEmprestimo.toFixed(2) + "€"
+        taxaRenda.innerText = mensalidade.toFixed(2)
+        taxaAnos.innerText = (valorEmprestimo * entrada).toFixed(2)
+
+    }
+})
+//
 // const dadosPesquisa = document.querySelectorAll(".dado-pesquisa")
 // const localidade = document.querySelector("#dado-localidade")
 // const btnPesquisar = document.querySelector(".procurar-btn")

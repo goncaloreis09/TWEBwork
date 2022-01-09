@@ -368,6 +368,7 @@ div.banner div.search-wrapper div.caixa-procura div.pesquisa div[class^="tipo-"]
 
 div.banner div.search-wrapper div.caixa-procura div.pesquisa div[class^="tipo-"]:hover div.options, div.banner div.search-wrapper div.caixa-procura div.pesquisa div.quartos:hover div.options {
   display: block;
+  z-index: 3;
 }
 
 div.banner div.search-wrapper div.caixa-procura div.pesquisa div.localidade {
@@ -1011,6 +1012,8 @@ div.opcoes-modal div.mais-opcoes div.filtros div.idade-opcoes, div.opcoes-modal 
 }
 
 div.opcoes-modal div.mais-opcoes div.filtros div.idade-opcoes > div, div.opcoes-modal div.mais-opcoes div.filtros div.garagem-opcoes > div, div.opcoes-modal div.mais-opcoes div.filtros div.transportes-opcoes > div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin-right: 3px;
   font-size: 13px;
   padding: 10px 25px;
@@ -1065,6 +1068,7 @@ div.resultados-modal {
   /* Black w/ opacity */
   padding: 5vh 0;
   z-index: 5;
+  overflow: auto;
 }
 
 div.resultados-modal div.resultados-painel {
@@ -1174,6 +1178,96 @@ div.resultados-modal div.resultados-painel div.resultados div.resultado-card > b
   background-color: #b4142e;
 }
 
+div.resultados-modal div.resultados-painel div.financiamento {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+div.resultados-modal div.resultados-painel div.financiamento > h3 {
+  text-transform: uppercase;
+}
+
+div.resultados-modal div.resultados-painel div.financiamento > form > input[type="submit"] {
+  margin: 20px 0;
+  border: none;
+  padding: 10px 25px;
+  background-color: #c8102e;
+  color: white;
+  font-family: 'Poppins';
+  cursor: pointer;
+}
+
+div.resultados-modal div.resultados-painel div.financiamento > form > input[type="submit"]:hover {
+  background-color: #b4142e;
+}
+
+div.resultados-modal div.resultados-painel div.financiamento div.dados-financiamento {
+  width: 90%;
+  padding: 1rem 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+div.resultados-modal div.resultados-painel div.financiamento div.dados-financiamento > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+div.resultados-modal div.resultados-painel div.financiamento div.dados-financiamento > div > label {
+  color: #c8102e;
+  font-size: 14px;
+}
+
+div.resultados-modal div.resultados-painel div.financiamento div.dados-financiamento > div > input {
+  font-family: 'Poppins';
+}
+
+div.resultados-modal div.resultados-painel div.financiamento div.dados-financiamento > div > input[type="number"] {
+  margin-top: 10px;
+  height: 2rem;
+  width: 150px;
+  padding: 15px 10px;
+}
+
+div.resultados-modal div.resultados-painel div.financiamento div.dados-financiamento > div > div {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.resultados-modal div.resultados-painel div.financiamento div.dados-financiamento > div > div > input[type="range"] {
+  margin-top: 10px;
+}
+
+div.resultados-modal div.resultados-painel div.financiamento div.dados-financiamento > div > div > input[type="number"] {
+  width: 50px;
+  height: 2rem;
+}
+
+div.resultados-modal div.resultados-painel div.financiamento div.dados-financiamento > div div.valores-spread > div {
+  margin-right: 5px;
+  background-color: #d6d6d6;
+  padding: 10px;
+  border-radius: 3px;
+}
+
 div.resultados-modal div.resultados-painel div.erros-pesquisa {
   position: absolute;
   top: 0;
@@ -1212,6 +1306,110 @@ div.resultados-modal div.resultados-painel div.erros-pesquisa button#entendi-btn
 
 div.resultados-modal div.resultados-painel div.erros-pesquisa button#entendi-btn:hover {
   background-color: #b4142e;
+}
+
+div.resultados-modal div.resultados-painel div.propostas-financiamento {
+  margin-top: 20px;
+  text-align: center;
+  margin: 10px 2rem;
+  position: relative;
+}
+
+div.resultados-modal div.resultados-painel div.propostas-financiamento > div {
+  width: 100%;
+  background-color: #f3f3f3;
+  text-align: left;
+  border-radius: 2px;
+  padding: 15px;
+  margin: 5px 0;
+  border: 1px solid #c8102e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 25vh;
+}
+
+div.resultados-modal div.resultados-painel div.propostas-financiamento > div div.banco {
+  width: 240px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+div.resultados-modal div.resultados-painel div.propostas-financiamento > div div.banco img {
+  width: 100%;
+}
+
+div.resultados-modal div.resultados-painel div.propostas-financiamento > div div.info-proposta {
+  height: 100%;
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+div.resultados-modal div.resultados-painel div.propostas-financiamento > div div.info-proposta p.title-proposta {
+  color: #c8102e;
+}
+
+div.resultados-modal div.resultados-painel div.propostas-financiamento > div div.info-proposta p.descricao {
+  font-size: 13px;
+}
+
+div.resultados-modal div.resultados-painel div.propostas-financiamento > div div.info-proposta p.descricao:last-child {
+  margin-bottom: 20px;
+}
+
+div.resultados-modal div.resultados-painel div.propostas-financiamento > div div.info-proposta div.taxas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+div.resultados-modal div.resultados-painel div.propostas-financiamento > div div.info-proposta div.taxas > div >
+div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.resultados-modal div.resultados-painel div.propostas-financiamento > div div.info-proposta div.taxas > div >
+div p {
+  font-size: 20px;
+}
+
+div.resultados-modal div.resultados-painel div.propostas-financiamento > div div.info-proposta div.taxas > div >
+div p#taxaRenda {
+  color: green;
+}
+
+div.resultados-modal div.resultados-painel div.propostas-financiamento > div div.info-proposta div.taxas > div >
+div span.percentagem {
+  margin-left: 10px;
+  font-size: 30px;
+}
+
+div.resultados-modal div.resultados-painel div.propostas-financiamento > div div.info-proposta div.taxas div#anos > span {
+  font-size: 25px;
 }
 
 .sem-detail {
@@ -1363,6 +1561,37 @@ div.hiding-menu ul.hiding-menu-options li div.dropdown-menu ul#cover li.no-under
   font-size: 13px;
 }
 
+.esconder-financiamento {
+  display: none;
+}
+
+.add-animation {
+  -webkit-animation: disapear 0.6s normal;
+          animation: disapear 0.6s normal;
+}
+
+.hide-resultado {
+  opacity: 20%;
+}
+
+@-webkit-keyframes disapear {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 20%;
+  }
+}
+
+@keyframes disapear {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 20%;
+  }
+}
+
 .hide {
   -webkit-transform: translateX(200%);
           transform: translateX(200%);
@@ -1407,6 +1636,33 @@ div.hiding-menu ul.hiding-menu-options li div.dropdown-menu ul#cover li.no-under
   }
   div.opcoes-modal div.mais-opcoes div.filtros > div {
     margin-top: 5px;
+  }
+  div.resultados-modal div.resultados-painel {
+    height: 93vh;
+    overflow: auto;
+  }
+  .add-animation {
+    -webkit-animation: disapear 2s normal;
+            animation: disapear 2s normal;
+  }
+  .hide-resultado {
+    display: none;
+  }
+  @-webkit-keyframes disapear {
+    0% {
+      opacity: 100%;
+    }
+    100% {
+      opacity: 0%;
+    }
+  }
+  @keyframes disapear {
+    0% {
+      opacity: 100%;
+    }
+    100% {
+      opacity: 0%;
+    }
   }
 }
 
@@ -1576,6 +1832,18 @@ div.hiding-menu ul.hiding-menu-options li div.dropdown-menu ul#cover li.no-under
     height: 3rem;
     font-size: 18px;
   }
+  div.resultados-modal div.resultados-painel {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    -webkit-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+  }
+  div.resultados-modal div.resultados-painel div.resultados {
+    -webkit-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+  }
 }
 
 @media only screen and (max-width: 575px) {
@@ -1659,6 +1927,9 @@ div.hiding-menu ul.hiding-menu-options li div.dropdown-menu ul#cover li.no-under
     height: 40px;
     border-radius: 0;
   }
+  div.banner div.search-wrapper div.caixa-procura div.opcoes {
+    display: none;
+  }
   div.galeria ul.seletor li {
     margin: 1px 5px;
     font-size: 11px;
@@ -1725,6 +1996,29 @@ div.hiding-menu ul.hiding-menu-options li div.dropdown-menu ul#cover li.no-under
   div.opcoes-modal div.mais-opcoes div.filtros div.idade-opcoes > div, div.opcoes-modal div.mais-opcoes div.filtros div.garagem-opcoes > div, div.opcoes-modal div.mais-opcoes div.filtros div.transportes-opcoes > div {
     padding-left: 12px;
     padding-right: 12px;
+  }
+  div.resultados-modal div.resultados-painel div.propostas-financiamento > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  div.resultados-modal div.resultados-painel div.propostas-financiamento > div div.info-proposta {
+    width: 100%;
+  }
+  div.resultados-modal div.resultados-painel div.propostas-financiamento > div div.info-proposta div.taxas {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  div.resultados-modal div.resultados-painel div.propostas-financiamento > div div.banco {
+    width: 100px;
+    min-height: 3rem;
   }
 }
 /*# sourceMappingURL=estilos.css.map */
