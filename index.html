@@ -10,7 +10,10 @@
 </head>
 <body id="body">
    
-    <!-- Navegação/ NavBar -->
+    <!--------------------------------------
+        ------NavBar / Header---------
+        --------MODO DESKTOP----------
+    --------------------------------------->
     <nav id="nav">
         <div id="container" class="site-width">    
             <div class="leftSide">
@@ -96,31 +99,6 @@
                     <li class="items-menu-especial">
                         <i class="far fa-clock"></i>
                         <span id="hist-counter">0</span>
-<!--                  
-                        HISTÓRICO DE PESQUISA
-
-
-                        <div class="historico-pesquisas">
-                            <h4>Histórico de pesquisas</h4>
-                            <div class="pesquisa">
-                                <div>
-                                    <div>
-                                        Tipo<i class="fas fa-euro-sign">:</i><span>Compra</span>
-                                    </div>
-                                    <div>
-                                        Imóvel<i class="fas fa-monument">:</i><span>Terrenos</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div>
-                                        Quartos<i class="fas fa-home">:</i><span>Indefenido</span>
-                                    </div>
-                                    <div>
-                                        Localidade<i class="fas fa-map-marker-alt">:</i><span>Fátima</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
                     </li>
                     <li class="items-menu-especial"><i class="far fa-user" style="margin-right: 6px;"></i></li>
                 </ul>
@@ -128,6 +106,10 @@
         </div>
     </nav>
 
+    <!--------------------------------------
+        ------NavBar / Header---------
+        --------MODO MOBILE-----------
+    --------------------------------------->
     <nav id="mobile">
         <div class="site-width mobile-menu">
             <div class="logo">
@@ -221,10 +203,11 @@
         </div>
     </nav>
 
-    <!-- Banner Inicial -->
+    <!--------------------------------------
+        ------BANNER INICIAL---------
+        -----BARRA DE PESQUISA-------
+    --------------------------------------->
     <div class="banner">
-        <!-- <img src="./img/banner.png" alt="" class="desktop-banner">
-        <img src="./img/banner-mobile.png" class="mobile-banner" alt=""> -->
         <div class="search-wrapper">
             <div class="caixa-procura site-width">
                 <div class="pesquisa">
@@ -285,6 +268,11 @@
         </div>
     </div>
 
+    <!--------------------------------------
+        ------PAINEL DE OPÇÕES---------
+        --------DA PESQUISA-----------
+    --------------------------------------->
+
     <div class="opcoes-modal not-show">
         <div class = "mais-opcoes">
             <div class="top-bar">
@@ -336,6 +324,12 @@
         </div>
     </div>
 
+    <!--------------------------------------
+        ------PAINEL DOS RESULTADOS---------
+        ------------DA PESQUISA-------------
+        ---------------E--------------------
+        ----PROPOSTAS DE FINANCIAMENTO------
+    --------------------------------------->
     <div class="resultados-modal not-show">
         <div class="resultados-painel site-width">
             <div class="top-bar">
@@ -410,24 +404,6 @@
                                 <input type="number" name="valueRange" id="valueRange" value="5" min="5" max="50" required>
                             </div>
                         </div>
-                        <!-- <div>
-                            <label >Valor do Spread</label>
-                            <div class="valores-spread">
-                                <div>
-                                    <input type="radio" name="spread" id="spread1" min="0" value="" required value="2">
-                                    <label for="spread1" id="label-spread1">2%</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="spread2" name="spread" value="3" required>
-                                    <label for="spread2" id="label-spread2">3%</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="spread3" name="spread" value="1.5" required>
-                                    <label for="spread3" id="label-spread3">1.5%</label>
-                                </div>
-                            </div>
-                            
-                        </div> -->
                     </div>
                     <input type="submit" value="Procurar Financiamento" >
                 </form>
@@ -559,10 +535,13 @@
     </div>
     
 
-    <!-- Fotos das casas -->
+    <!--------------------------------------
+        ----------DESTAQUES----------
+    --------------------------------------->
 
     <div class="galeria site-width">
         <h1>Destaques</h1>
+        <!-- SELETOR DE TIPO DE CASAS -->
         <ul class="seletor">
             <li class="active-tab">Todas</li>
             <li>Garantia ERA</li>
@@ -570,6 +549,8 @@
             <li>Desenvolvimentos</li>
             <li>Visita Virtual</li>
         </ul>
+
+        <!-- GALERIA (FOTOS) -->
         <div class="fotos">
             <div class="grid-span-2">
                 <img src="./img/casa4.jpg" alt="">
@@ -689,6 +670,9 @@
         </div>
     </div>
 
+    <!--------------------------------------
+        ---------VANTAGENS ERA---------
+    --------------------------------------->
     <div class="vantagens-era site-width">
         <p>Quem compra ou vende a casa com a <br>ERA tem mais vantagens</p>
         <div class="vantagens">
@@ -727,6 +711,9 @@
         </div>
     </div>
 
+    <!--------------------------------------
+        -----PESQUISAS MAIS COMUNS-------
+    --------------------------------------->
     <div class="pesquisas-comuns">
         <div class="site-width">
             <h3>Pesquisas mais comuns</h3>
@@ -822,6 +809,10 @@
         </div>
     </div>
 
+    <!--------------------------------------
+        ----------BARRA DE-------------
+        --------CRIAR ANÚNCIO----------
+    --------------------------------------->
     <div class="avaliar-imovel-wrapper">
         <div class="avaliar-imovel site-width">
             <p class="strong">Venda o seu Imóvel</p>
@@ -830,7 +821,9 @@
         </div>
     </div>
 
-    
+    <!--------------------------------------
+        ----------FOOTER-------------
+    --------------------------------------->
     <footer>
         <div class="footer-info-wrapper">
             <div class="footer-info site-width">
@@ -869,6 +862,8 @@
                         <li>Acelerador de Negócio ERA</li>
                     </ul>
                 </div>
+
+                <!-- REDES SOCIAIS -->
                 <div class="redes-sociais">
                     <p class="strong">Siga-nos</p>
                     <div>
@@ -882,6 +877,7 @@
                 </div>
             </div>
         </div>
+        <!-- DIREITOS AUTORIAIS -->
         <div class="copyright site-width">
             <div class="left">
                 <img src="./img/logo.png" alt="" width="40">
@@ -896,6 +892,7 @@
                     <p>Todos os direitos reservados. Powered by Gonçalo Reis & Yan Nacamae</p>
                 </div>
             </div>
+            <!-- BOTÃO DE SELECIONAR LINGUAGEM NO FUNDO DA PÁGINA -->
             <div class="right">
                 <div class="language">
                     <div>

@@ -186,16 +186,6 @@ li.dropdown{
 
         }
     }
-
-    // div.right{
-        
-    //     position: absolute;
-    //     top: 15px;
-    //     right: 200px;
-    //     cursor:default;
-    //     width: 300px;
-    // }
-
     &:hover{
 
         div.dropdown-menu{
@@ -299,6 +289,10 @@ div.banner{
                         @include flex-between-center();
                         font-weight: bold;
                         text-transform: uppercase;
+
+                        >i{
+                            transform: rotateX(180deg);
+                        }
                        
                         &:hover + div.options{
                             display: block;
@@ -312,7 +306,7 @@ div.banner{
                         }
 
                         >div > i {
-                            transform: rotateX(180deg);
+                            transform: rotateX(0deg);
                         }
 
                         div.options{

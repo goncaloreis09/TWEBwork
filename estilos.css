@@ -353,6 +353,11 @@ div.banner div.search-wrapper div.caixa-procura div.pesquisa div[class^="tipo-"]
   text-transform: uppercase;
 }
 
+div.banner div.search-wrapper div.caixa-procura div.pesquisa div[class^="tipo-"] div.title > i, div.banner div.search-wrapper div.caixa-procura div.pesquisa div.quartos div.title > i {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+
 div.banner div.search-wrapper div.caixa-procura div.pesquisa div[class^="tipo-"] div.title:hover + div.options, div.banner div.search-wrapper div.caixa-procura div.pesquisa div.quartos div.title:hover + div.options {
   display: block;
 }
@@ -362,8 +367,8 @@ div.banner div.search-wrapper div.caixa-procura div.pesquisa div[class^="tipo-"]
 }
 
 div.banner div.search-wrapper div.caixa-procura div.pesquisa div[class^="tipo-"]:hover > div > i, div.banner div.search-wrapper div.caixa-procura div.pesquisa div.quartos:hover > div > i {
-  -webkit-transform: rotateX(180deg);
-          transform: rotateX(180deg);
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
 }
 
 div.banner div.search-wrapper div.caixa-procura div.pesquisa div[class^="tipo-"]:hover div.options, div.banner div.search-wrapper div.caixa-procura div.pesquisa div.quartos:hover div.options {

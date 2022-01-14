@@ -97,7 +97,6 @@ window.addEventListener('scroll', ()=>{
     posicaoScroll = posicaoScrollNova
 })
 
-
 //Loop para abrir e fechar dropdowns no menu mobile
 for(let i=0; i<drpdwnTriggers.length;i++){
     drpdwnTriggers[i].addEventListener("click", () => {
@@ -107,11 +106,7 @@ for(let i=0; i<drpdwnTriggers.length;i++){
     })
 }
 
-
 document.addEventListener("click", (e) => {
-
-
-
     //Abrir e Fechar menu mobile
     if( e.target.matches(".burger") || e.target.matches(".fa-align-left")){
         mobileMenu.classList.remove("hide")
@@ -119,7 +114,6 @@ document.addEventListener("click", (e) => {
         mobileMenu.classList.add("hide")
     }
 })
-
 
 //mudar texto dos filtros da barra de pesquisa
 for(let j=0; j<opcoes.length; j++){
@@ -188,6 +182,7 @@ saveOptions.addEventListener("click", () =>{
                 idade = undefined
         }
     }
+    
     let selecionadoGaragem = false
     for(let i=0; i<garagem.length; i++){
         if(garagem[i].classList.contains("opcao-active")){
@@ -243,8 +238,8 @@ for(let k=0; k<3; k++){
             array[i].classList.remove("opcao-active")
         }
 
-        inputAreaUtilMin.value = null
-        inputAreaUtilMax.value = null
+        inputAreaUtilMin.value = undefined
+        inputAreaUtilMax.value = undefined
     })
 }
 
@@ -342,7 +337,6 @@ btnPesquisar.addEventListener("click", () =>{
         if(temTransportes == "nao")
             coeficienteDesvalorizacao *= 0.9
 
-
         if(i==0){
             card = aldeiaCard
             preco = area * aldeia * coeficienteDesvalorizacao
@@ -361,49 +355,52 @@ btnPesquisar.addEventListener("click", () =>{
         
         //Caso o utilizador não tenha decidido se quer ou não Garagem ou Transportes
         //Gera valores random
+        let garagemText = card.children[1].children[2].children[1]
+
         if(temGaragem == undefined){
             let x //Variável apenas para auxiliar na estrutura de decisão
             x = randomArray[Math.floor(Math.random() * randomArray.length)]
             if(x == "Com"){
-                card.children[1].children[2].children[1].classList.add("com-detail")
-                card.children[1].children[2].children[1].classList.remove("sem-detail")
+                garagemText.classList.add("com-detail")
+                garagemText.classList.remove("sem-detail")
             }else{
-                card.children[1].children[2].children[1].classList.remove("com-detail")
-                card.children[1].children[2].children[1].classList.add("sem-detail")
+                garagemText.classList.remove("com-detail")
+                garagemText.classList.add("sem-detail")
             }
-            card.children[1].children[2].children[1].innerText = x
+            garagemText.innerText = x
         }else{
             if(temGaragem == "sim"){
-                card.children[1].children[2].children[1].classList.add("com-detail")
-                card.children[1].children[2].children[1].classList.remove("sem-detail")
-                card.children[1].children[2].children[1].innerText = "Com"
+                garagemText.classList.add("com-detail")
+                garagemText.classList.remove("sem-detail")
+                garagemText.innerText = "Com"
             }else{
-                card.children[1].children[2].children[1].classList.remove("com-detail")
-                card.children[1].children[2].children[1].classList.add("sem-detail")
-                card.children[1].children[2].children[1].innerText = "Sem"
+                garagemText.classList.remove("com-detail")
+                garagemText.classList.add("sem-detail")
+                garagemText.innerText = "Sem"
             }
         }
 
+        let transportesText = card.children[1].children[3].children[1]
         if(temTransportes == undefined){
             let x //Variável apenas para auxiliar na estrutura de decisão
             x = randomArray[Math.floor(Math.random() * randomArray.length)]
             if(x == "Com"){
-                card.children[1].children[3].children[1].classList.add("com-detail")
-                card.children[1].children[3].children[1].classList.remove("sem-detail")
+                transportesText.classList.add("com-detail")
+                transportesText.classList.remove("sem-detail")
             }else{
-                card.children[1].children[3].children[1].classList.remove("com-detail")
-                card.children[1].children[3].children[1].classList.add("sem-detail")
+                transportesText.classList.remove("com-detail")
+                transportesText.classList.add("sem-detail")
             }
-            card.children[1].children[3].children[1].innerText = x
+            transportesText.innerText = x
         }else{
             if(temTransportes == "sim"){
-                card.children[1].children[3].children[1].classList.add("com-detail")
-                card.children[1].children[3].children[1].classList.remove("sem-detail")
-                card.children[1].children[3].children[1].innerText = "Com"
+                transportesText.classList.add("com-detail")
+                transportesText.classList.remove("sem-detail")
+                transportesText.innerText = "Com"
             }else{
-                card.children[1].children[3].children[1].classList.remove("com-detail")
-                card.children[1].children[3].children[1].classList.add("sem-detail")
-                card.children[1].children[3].children[1].innerText = "Sem"
+                transportesText.classList.remove("com-detail")
+                transportesText.classList.add("sem-detail")
+                transportesText.innerText = "Sem"
             }
         }
 
@@ -462,15 +459,6 @@ for(let i=0; i<financiarBtn.length; i++){
                 }
             }
         }
-        
-//     for(let k=0; k<inputSpread.length;k++){
-//         let spread = parseFloat((Math.random() * (5.0 - 1.0) + 1.0).toFixed(2))
-//         inputSpread[k].value = spread
-        
-//         let x = "label-spread" + (k+1)
-//         let label = document.getElementById(x)
-//         label.innerText = spread + "%"
-// }
 
     })
 }
@@ -482,6 +470,21 @@ inputAnosFinanciamento.addEventListener("input", ()=>{
     if(inputAnosFinanciamento.value)
         inputRangeAnosFinanciamento.value = inputAnosFinanciamento.value
 })
+
+
+
+
+
+/*--------------------------------------------------------
+----------------------------------------------------------
+                    FINANCIMENTO
+---------------------------------------------------------
+---------------------------------------------------------
+*/
+
+
+
+
 
 //Por as propostas de acordo com o pretendido
 formFinanciamento.addEventListener("submit", (e) =>{
@@ -508,10 +511,10 @@ formFinanciamento.addEventListener("submit", (e) =>{
         let nomeMontante = "montante-pedido" + i
         let nomeEmprestimo = "valor-emprestimo" + i
 
-        valorEmprestimo = inputPrecoFinanciamento.value * (spread[i] + 0.5)
         taeg = parseFloat(spread[i]) + 0.5
-        mensalidade = valorEmprestimo / (inputAnosFinanciamento.value * 12)
         entrada = parseFloat((Math.random() * (0.1 - 0.05) + 0.05).toFixed(2))
+        valorEmprestimo = montante * taeg / 100 + parseFloat(montante)
+        mensalidade = valorEmprestimo / (inputAnosFinanciamento.value * 12)
 
         let taxaSpread = document.getElementById(nomeSpread)
         let taxaJuro = document.getElementById(nomeJuro)
@@ -530,91 +533,3 @@ formFinanciamento.addEventListener("submit", (e) =>{
 
     }
 })
-//
-// const dadosPesquisa = document.querySelectorAll(".dado-pesquisa")
-// const localidade = document.querySelector("#dado-localidade")
-// const btnPesquisar = document.querySelector(".procurar-btn")
-
-// //Guardar informação de pesquisas anteriores
-// localStorage.setItem("numPesquisas", 1) //Guardar quantas pesquisas o utilizador já fez, para ajudar na nomeação
-//                                         //do objeto
-
-// btnPesquisar.addEventListener("click", (e)=>{
-//     let tipoCompra = dadosPesquisa[0].innerHTML
-//     let tipoImovel
-//     let nQuartos
-//     if(dadosPesquisa[1].innerHTML != "tipo imóvel"){
-//         tipoImovel = dadosPesquisa[1].innerHTML
-//     } // verificar se tem algum valor válido
-//     else{
-//         tipoImovel = "Indefenido"
-//     }
-
-//     if(dadosPesquisa[2].innerHTML != "quartos"){ // verificar se tem algum valor válido
-//         nQuartos = dadosPesquisa[2].innerHTML
-//     }else{
-//         nQuartos = "Indefenido"
-//     }
-
-//     let localidadeValue = localidade.value
-
-//     let pesquisa = {
-//             tipoCompra: tipoCompra,
-//             tipoImovel: tipoImovel,
-//             quartos: nQuartos,
-//             localidade: localidadeValue
-//     }
-
-//     let pesquisaSerialized = JSON.stringify(pesquisa)
-
-//     let numPesquisa = localStorage.getItem("numPesquisas")
-//     console.log(localStorage.getItem("numPesquisas"))
-//     let nome = "pesquisa" + numPesquisa
-
-
-//     localStorage.setItem(nome, pesquisaSerialized)
-
-//     if(localStorage.getItem(nome)){ //verificar se ficou mesmo guardado
-//         contadorHist.innerHTML = numPesquisa
-//     }
-
-
-//     for(let i=1; i<=parseInt(numPesquisa); i++){
-//         let nome = "pesquisa" + numPesquisa
-//         let obj = localStorage.getItem(nome)
-//         if(obj){
-//             let newDiv = document.createElement("div")
-//             newDiv.innerHTML = `<div>
-//                     <div>
-//                         Tipo<i class="fas fa-euro-sign">:</i><span>${pesquisa.tipoCompra}</span>
-//                     </div>
-//                     <div>
-//                         Imóvel<i class="fas fa-monument">:</i><span>${pesquisa.tipoImovel}</span>
-//                     </div>
-//                 </div>
-//                 <div>
-//                     <div>
-//                         Quartos<i class="fas fa-home">:</i><span>${pesquisa.quartos}</span>
-//                     </div>
-//                     <div>
-//                         Localidade<i class="fas fa-map-marker-alt">:</i><span>${pesquisa.localidade}</span>
-//                     </div>
-//                 </div>`
-
-//             newDiv.classList.add("pesquisa")
-//             painelHist.append(newDiv)
-    
-//         }
-    
-//     }
-
-//     numPesquisa++
-//     localStorage.setItem("numPesquisas", numPesquisa)
-//     console.log(localStorage.getItem("numPesquisas"))
-// })
-
-
-
-// let num = localStorage.getItem("numPesquisas")
-// num--
-
